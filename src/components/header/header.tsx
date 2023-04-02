@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container } from './styles';
 
-function Header(): JSX.Element {
-  return <Container>oi</Container>;
-}
+const Header: React.FC = () => {
+  return <Container>montserrat texto mudou</Container>;
+};
 
 export default Header;
