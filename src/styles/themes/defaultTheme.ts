@@ -20,4 +20,6 @@ export default {
     title: fonts.bebasNeue,
     text: fonts.montserrat,
   },
+
+  defaultMaxWidth: '1400px',
 };
