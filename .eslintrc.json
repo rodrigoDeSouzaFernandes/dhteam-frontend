@@ -13,7 +13,7 @@
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
-    "project": "./tsconfig.json" // adicione essa linha
+    "project": "./tsconfig.json"
   },
   "plugins": [
     "react",

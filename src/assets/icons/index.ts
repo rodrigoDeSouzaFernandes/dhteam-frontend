@@ -1,4 +1,6 @@
-import { ReactComponent as LocalIcon } from './local.svg';
-import { ReactComponent as Instagram } from './instagram.svg';
+import localIcon from './local.svg';
+import instagramIcon from './instagram.svg';
+import menuIcon from './menu.svg';
+import xIcon from './x.svg';
 
-export { LocalIcon, Instagram };
+export { localIcon, instagramIcon, menuIcon, xIcon };

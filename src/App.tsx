@@ -1,12 +1,14 @@
 import React from 'react';
-import Header from './components/header';
+
+import { Routes, Route } from 'react-router-dom';
+import Home from 'pages/Home/home';
 
 function App(): JSX.Element {
   return (
-    <div className="App">
-      <Header />
-      oi
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="*" element={<p>Not found</p>} />
+    </Routes>
   );
 }
 
