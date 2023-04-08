@@ -1,18 +1,10 @@
-import styled, { keyframes } from 'styled-components';
-
-const teste = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100% {
-  }
-`;
+import styled from 'styled-components';
 
 export const Container = styled.section`
   padding: 80px 40px;
-
-  visibility: visible;
-  animation: ${teste} 2s linear;
+  background-color: ${(props) => props.theme.colors.secondary};
+  border-bottom: 1px solid ${(props) => props.theme.colors.primary};
+  margin-bottom: 200px;
 
   & > div {
     display: flex;
@@ -39,6 +31,40 @@ export const Container = styled.section`
     color: ${(props) => props.theme.colors.secondaryText};
     padding: 10px 0;
     line-height: 140%;
+  }
+
+  .partner-logo {
+    width: 100px;
+    height: 200px;
+    margin-bottom: 50px; //manter os pontos abaixo do item do carousel
+  }
+
+  .carousel-container {
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .carousel-root {
+    .control-arrow {
+      &::before {
+        border-right-color: #000;
+        border-left-color: #000;
+      }
+    }
+
+    .control-dots {
+      .dot {
+        background-color: #000;
+
+        &:hover {
+          background-color: red;
+        }
+      }
+      .dot.selected {
+        background-color: #000;
+      }
+    }
   }
 
   @media screen and (min-width: 400px) {

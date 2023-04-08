@@ -10,18 +10,20 @@
     "@types/node": "^16.18.23",
     "@types/react": "^18.0.31",
     "@types/react-dom": "^18.0.11",
-    "@types/react-slick": "^0.23.10",
+    "add": "^2.0.6",
     "optionator": "^0.9.1",
     "react": "^18.2.0",
+    "react-carousel": "^4.3.0",
     "react-dom": "^18.2.0",
     "react-lazyload": "^3.2.0",
+    "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
-    "react-slick": "^0.29.0",
     "react-svg": "^16.1.7",
     "styled-components": "^5.3.9",
     "typescript": "*",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yarn": "^1.22.19"
   },
   "scripts": {
     "start": "react-scripts start",
