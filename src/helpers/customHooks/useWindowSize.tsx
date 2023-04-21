@@ -1,10 +1,6 @@
 import { useState, useEffect } from 'react';
 
-interface Size {
-  width?: number;
-  height?: number;
-  isMobile: boolean;
-}
+import { type Size } from 'types/windowSizeInterfaces';
 
 function useWindowSize(): Size {
   const [windowSize, setWindowSize] = useState<Size>({

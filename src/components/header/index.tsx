@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Header from './header';
 import HeaderMobile from './headerMobile';
-import useWindowSize from 'helpers/customHooks/useWindowSize';
+import GlobalContext from 'context/globalContext/globalContext';
 
 const HeaderIndex: React.FC = () => {
-  const { isMobile } = useWindowSize();
+  const { windowSize } = useContext(GlobalContext);
 
-  return isMobile ? <HeaderMobile /> : <Header />;
+  return windowSize.isMobile ? <HeaderMobile /> : <Header />;
 };
 
 export default HeaderIndex;

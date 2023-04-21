@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-  padding: 80px 40px;
+  padding: 80px 20px;
   background-color: ${(props) => props.theme.colors.secondary};
   border-bottom: 1px solid ${(props) => props.theme.colors.primary};
-  margin-bottom: 200px;
 
   & > div {
     display: flex;
@@ -22,6 +21,7 @@ export const Container = styled.section`
     line-height: 0.8;
     width: auto;
     line-height: 100%;
+    color: ${(props) => props.theme.colors.text};
   }
 
   .subtitle {
@@ -34,18 +34,19 @@ export const Container = styled.section`
   }
 
   .partner-logo {
-    width: 100px;
-    height: 200px;
+    height: 150px;
     margin-bottom: 50px; //manter os pontos abaixo do item do carousel
+    margin-top: 45px; //manter os pontos abaixo do item do carousel
   }
 
   .carousel-container {
-    margin: 40px auto;
+    margin: 0px auto 40px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .carousel-root {
+    max-width: 1400px;
     .control-arrow {
       &::before {
         border-right-color: #000;
@@ -68,6 +69,8 @@ export const Container = styled.section`
   }
 
   @media screen and (min-width: 400px) {
+    padding: 80px 40px;
+
     .title {
       font-size: 2rem;
       letter-spacing: 2px;
@@ -78,6 +81,10 @@ export const Container = styled.section`
     .title {
       font-size: 3rem;
       letter-spacing: 3px;
+    }
+
+    .partner-logo {
+      height: 200px;
     }
   }
 `;

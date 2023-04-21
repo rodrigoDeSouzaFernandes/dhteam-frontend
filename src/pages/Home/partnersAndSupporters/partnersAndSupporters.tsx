@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useContext, useMemo } from 'react';
 import { Container } from './styles';
 import { Carousel } from 'react-responsive-carousel';
 
 import fenixAcademia from 'assets/partners/fenix-academia.svg';
 import realBarberShop from 'assets/partners/realbarbershop.svg';
+import GlobalContext from 'context/globalContext/globalContext';
 
 const PartnersAndSupporters: React.FC = () => {
+  const { windowSize } = useContext(GlobalContext);
+
+  const centerSlidePercentage = useMemo(
+    () => (windowSize.width < 650 ? 100 : windowSize.width < 1300 ? 33 : 20),
+    [windowSize],
+  );
+
   return (
     <Container>
       <div className="apply-max-width">
@@ -23,10 +31,38 @@ const PartnersAndSupporters: React.FC = () => {
           interval={5000}
           showThumbs={false}
           showIndicators={true}
-          centerSlidePercentage={30}
+          centerSlidePercentage={centerSlidePercentage}
           centerMode={true}
           swipeScrollTolerance={50}
         >
+          <div>
+            <img
+              src={realBarberShop}
+              alt="logo parceiro: real barber shop"
+              className="partner-logo"
+            />
+          </div>
+          <div>
+            <img
+              src={fenixAcademia}
+              alt="logo parceiro: fenix academia"
+              className="partner-logo"
+            />
+          </div>
+          <div>
+            <img
+              src={realBarberShop}
+              alt="logo parceiro: real barber shop"
+              className="partner-logo"
+            />
+          </div>
+          <div>
+            <img
+              src={fenixAcademia}
+              alt="logo parceiro: fenix academia"
+              className="partner-logo"
+            />
+          </div>
           <div>
             <img
               src={realBarberShop}
