@@ -31,13 +31,12 @@ export const Container = styled.section<ContainerProps>`
 
   .benefits-list {
     max-width: 1200px;
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
     gap: 20px;
     margin: auto;
 
     .benefit {
-      width: calc(50% - 10px);
       vertical-align: top;
       list-style: none;
       display: flex;
@@ -46,6 +45,12 @@ export const Container = styled.section<ContainerProps>`
       color: ${(props) => props.theme.colors.secondary};
       font-family: ${(props) => props.theme.fonts.text};
       text-shadow: 5px 5px 5px black;
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    .benefits-list {
+      grid-template-columns: 1fr 1fr;
     }
   }
 `;

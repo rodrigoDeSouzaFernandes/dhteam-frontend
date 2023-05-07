@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-  padding: 80px 20px;
+  padding: 40px 20px;
   background-color: ${(props) => props.theme.colors.secondary};
   border-bottom: 1px solid ${(props) => props.theme.colors.primary};
 

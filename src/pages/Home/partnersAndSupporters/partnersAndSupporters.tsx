@@ -10,7 +10,7 @@ const PartnersAndSupporters: React.FC = () => {
   const { windowSize } = useContext(GlobalContext);
 
   const centerSlidePercentage = useMemo(
-    () => (windowSize.width < 650 ? 100 : windowSize.width < 1300 ? 33 : 20),
+    () => (windowSize.width < 650 ? 100 : 33),
     [windowSize],
   );
 

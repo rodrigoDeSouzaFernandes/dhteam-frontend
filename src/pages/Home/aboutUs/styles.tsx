@@ -6,7 +6,7 @@ export const Container = styled.section`
   justify-content: center;
   max-width: ${(props) => props.theme.defaultMaxWidth};
   margin: auto;
-  padding: 80px 20px;
+  padding: 40px 20px;
   gap: 40px;
 
   .about-us,

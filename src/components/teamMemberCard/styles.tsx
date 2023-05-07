@@ -2,15 +2,35 @@ import styled from 'styled-components';
 
 import { beltColors } from './beltColors';
 
-import { type BeltColor } from './types';
+import { type CardSize, type BeltColor } from './types';
+
+const sizes = {
+  small: {
+    cardWidth: '200px',
+    cardHeight: '260px',
+    imageSize: '150px',
+    nameFontSize: '1.2rem',
+    gap: '15px',
+  },
+  large: {
+    cardWidth: '300px',
+    cardHeight: '400px',
+    imageSize: '250px',
+    nameFontSize: '1.5rem',
+    gap: '30px',
+  },
+};
 
 interface ContainerProps {
   belt: BeltColor;
+  flipped: boolean;
+  size: CardSize;
 }
 
 export const Container = styled.div<ContainerProps>`
-  width: 300px;
-  height: 400px;
+  width: ${(props) => sizes[props.size].cardWidth};
+  height: ${(props) => sizes[props.size].cardHeight};
+  position: relative;
 
   .front {
     width: 100%;
@@ -19,16 +39,20 @@ export const Container = styled.div<ContainerProps>`
     background-color: white;
     border-radius: 12px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-
     display: grid;
-    grid-template-rows: 250px 1fr;
+    grid-template-rows: auto 1fr;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: ${(props) => sizes[props.size].gap};
+
+    overflow: hidden;
+
+    transform: ${(props) =>
+      props.flipped ? 'rotateY(180deg)' : 'rotateY(0deg)'};
 
     .image-container {
-      width: 250px;
-      height: 250px;
+      width: ${(props) => sizes[props.size].imageSize};
+      height: ${(props) => sizes[props.size].imageSize};
       display: flex;
       align-items: center;
       justify-content: center;
@@ -60,7 +84,7 @@ export const Container = styled.div<ContainerProps>`
     .name {
       text-align: center;
       font-family: ${(props) => props.theme.fonts.title};
-      font-size: 1.5rem;
+      font-size: ${(props) => sizes[props.size].nameFontSize};
       color: ${(props) => props.theme.colors.text};
     }
   }
@@ -69,7 +93,6 @@ export const Container = styled.div<ContainerProps>`
     width: 100%;
     height: 100%;
     padding: 40px;
-    background-color: white;
     border-radius: 12px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     display: flex;
@@ -99,10 +122,9 @@ export const Container = styled.div<ContainerProps>`
       color: ${(props) => props.theme.colors.secondaryText};
     }
 
-    transform: rotateY(180deg);
+    transform: ${(props) =>
+      props.flipped ? 'rotateY(0deg)' : 'rotateY(180deg)'};
   }
-
-  position: relative;
 
   .front,
   .back {
@@ -115,13 +137,33 @@ export const Container = styled.div<ContainerProps>`
     transition: transform 1s;
   }
 
-  &:hover {
-    .front {
-      transform: rotateY(180deg);
-    }
+  .social-media {
+    background-color: ${(props) => beltColors[props.belt].primary};
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transform: translateY(100%);
+    transition: all 0.5s;
+  }
 
-    .back {
-      transform: rotateY(0deg);
+  .button-info {
+    cursor: pointer;
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    top: 12px;
+    right: 12px;
+  }
+
+  &:hover {
+    .social-media {
+      transform: translateY(0);
     }
   }
 `;

@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Container } from './styles';
 
 import { type Props } from './types';
+import { Icon } from 'ts-react-feather-icons';
+import GlobalContext from 'context/globalContext/globalContext';
 
-const TeamMemberCard: React.FC<Props> = ({ beltColor, name, ...rest }) => {
+const TeamMemberCard: React.FC<Props> = ({
+  beltColor,
+  name,
+  size = 'large',
+  ...rest
+}) => {
+  const [flipped, setFlipped] = useState(false);
+
+  const { windowSize } = useContext(GlobalContext);
+
+  const flip = (): void => {
+    setFlipped((prev) => !prev);
+  };
+
+  const socialMediaIconSize = windowSize.width < 400 ? 16 : 24;
+
   return (
-    <Container {...rest} belt={beltColor}>
+    <Container {...rest} belt={beltColor} flipped={flipped} size={size}>
       <div className="front">
         <div className="image-container">
           <img
@@ -14,6 +31,19 @@ const TeamMemberCard: React.FC<Props> = ({ beltColor, name, ...rest }) => {
           />
         </div>
         <p className="name">{name}</p>
+        <div className="social-media">
+          <Icon name="instagram" color="white" size={socialMediaIconSize} />
+          <Icon name="facebook" color="white" size={socialMediaIconSize} />
+          <Icon name="phone" color="white" size={socialMediaIconSize} />
+          <Icon name="youtube" color="white" size={socialMediaIconSize} />
+        </div>
+        <button className="button-info" onClick={flip}>
+          <Icon
+            name="info"
+            color="black"
+            size={(socialMediaIconSize / 3) * 2}
+          />
+        </button>
       </div>
       <div className="back">
         <p className="name">{name}</p>
@@ -23,6 +53,13 @@ const TeamMemberCard: React.FC<Props> = ({ beltColor, name, ...rest }) => {
           {'Campeão master masculino pesado - latino Americano 2023'}
         </p>
         <p className="latest-graduation">{'Graduado em: mar/2022'}</p>
+        <button className="button-info" onClick={flip}>
+          <Icon
+            name="corner-up-left"
+            color="white"
+            size={(socialMediaIconSize / 3) * 2}
+          />
+        </button>
       </div>
     </Container>
   );

@@ -14,6 +14,11 @@ const Team: React.FC = () => {
     [windowSize],
   );
 
+  const cardSize = useMemo(
+    () => (windowSize.width < 400 ? 'small' : 'large'),
+    [windowSize],
+  );
+
   interface TeamMember {
     name: string;
     belt: 'white' | 'blue' | 'purple' | 'brown' | 'black';
@@ -44,7 +49,13 @@ const Team: React.FC = () => {
 
   return (
     <Container>
-      <h1 className="title">NOSSA EQUIPE</h1>
+      <div>
+        <h1 className="title">NOSSA EQUIPE</h1>
+        <p className="subtitle">
+          Nossa equipe é composta por professores qualificados e experientes,
+          comprometidos em fornecer a melhor educação possível.
+        </p>
+      </div>
 
       <div className="members">
         {showCarousel ? (
@@ -58,6 +69,7 @@ const Team: React.FC = () => {
             centerSlidePercentage={100}
             centerMode={true}
             swipeScrollTolerance={50}
+            showArrows={false}
           >
             {mockTeamMembers.map((member, index) => (
               <TeamMemberCard
@@ -65,6 +77,7 @@ const Team: React.FC = () => {
                 className="team-member-card"
                 beltColor={member.belt}
                 name={member.name}
+                size={cardSize}
               />
             ))}
           </Carousel>
@@ -78,6 +91,7 @@ const Team: React.FC = () => {
                   className="team-member-card"
                   beltColor={member.belt}
                   name={member.name}
+                  size="large"
                 />
               ))}
           </>
