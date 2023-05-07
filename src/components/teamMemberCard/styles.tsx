@@ -99,7 +99,6 @@ export const Container = styled.div<ContainerProps>`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
     color: white;
     background-color: ${(props) => props.theme.colors.primary};
 
@@ -112,7 +111,7 @@ export const Container = styled.div<ContainerProps>`
     .info {
       text-align: center;
       font-family: ${(props) => props.theme.fonts.text};
-      font-size: 0.9rem;
+      font-size: 0.75rem;
     }
 
     .latest-graduation {
@@ -164,6 +163,15 @@ export const Container = styled.div<ContainerProps>`
   &:hover {
     .social-media {
       transform: translateY(0);
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    .back {
+      .info {
+        font-size: 0.9rem;
+      }
+      gap: 10px;
     }
   }
 `;

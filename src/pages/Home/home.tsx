@@ -7,6 +7,7 @@ import AboutUs from './aboutUs';
 import Benefits from './benefits';
 import Team from './team';
 import Facilities from './facilities/facilities';
+import Reviews from './reviews/reviews';
 
 const Home: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const Home: React.FC = () => {
       <Benefits />
       <Team />
       <Facilities />
+      <Reviews />
     </Container>
   );
 };

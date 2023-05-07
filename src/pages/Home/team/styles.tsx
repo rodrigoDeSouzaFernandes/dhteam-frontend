@@ -1,6 +1,21 @@
 import styled from 'styled-components';
 
-export const Container = styled.section`
+interface ContainerProps {
+  backgroundImage: string;
+}
+
+export const Container = styled.section<ContainerProps>`
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0.95)
+    ),
+    url(${(props) => props.backgroundImage});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-color: transparent;
+
   padding: 40px 20px;
   gap: 40px;
   display: flex;
@@ -21,7 +36,7 @@ export const Container = styled.section`
 
   .subtitle {
     font-family: ${(props) => props.theme.fonts.text};
-    max-width: 600px;
+    max-width: 400px;
     text-align: center;
     color: ${(props) => props.theme.colors.secondaryText};
     padding: 10px 0;
@@ -88,6 +103,10 @@ export const Container = styled.section`
 
   @media screen and (min-width: 800px) {
     padding: 80px 40px;
+
+    .subtitle {
+      max-width: 600px;
+    }
 
     & > .members {
       display: grid;

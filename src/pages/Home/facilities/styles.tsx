@@ -15,16 +15,15 @@ export const Container = styled.section`
   );
   color: white;
 
-  & > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
 
   .carousel-root {
-    width: 100%;
+    width: 70%;
+    max-width: 1400px;
   }
 
   .title {
@@ -66,6 +65,8 @@ export const Container = styled.section`
   }
 
   @media screen and (min-width: 800px) {
+    /* padding: 80px 160px; */
+
     .title {
       h1 {
         font-size: 3rem;
@@ -73,4 +74,8 @@ export const Container = styled.section`
       }
     }
   }
+
+  /* @media screen and (min-width: 800px) {
+    padding: 80px 160px;
+  } */
 `;

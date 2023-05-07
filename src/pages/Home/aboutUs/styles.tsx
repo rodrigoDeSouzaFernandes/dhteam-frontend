@@ -1,13 +1,29 @@
 import styled from 'styled-components';
 
-export const Container = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: ${(props) => props.theme.defaultMaxWidth};
-  margin: auto;
+interface ContainerProps {
+  backgroundImage: string;
+}
+
+export const Container = styled.section<ContainerProps>`
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0.95)
+    ),
+    url(${(props) => props.backgroundImage});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-color: transparent;
+
+  & > div.apply-max-width {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+  }
+
   padding: 40px 20px;
-  gap: 40px;
 
   .about-us,
   .our-mission {
@@ -34,8 +50,10 @@ export const Container = styled.section`
   }
 
   @media screen and (min-width: 400px) {
-    flex-direction: column;
-    padding: 80px 40px;
+    & > div.apply-max-width {
+      flex-direction: column;
+      padding: 80px 40px;
+    }
 
     .about-us,
     .our-mission {
@@ -45,7 +63,9 @@ export const Container = styled.section`
   }
 
   @media screen and (min-width: 800px) {
-    flex-direction: row;
+    & > div.apply-max-width {
+      flex-direction: row;
+    }
 
     .about-us {
       text-align: end;

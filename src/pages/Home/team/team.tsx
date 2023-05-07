@@ -3,6 +3,7 @@ import { Container } from './styles';
 import TeamMemberCard from 'components/teamMemberCard/teamMemberCard';
 import { Carousel } from 'react-responsive-carousel';
 import GlobalContext from 'context/globalContext/globalContext';
+import logo from 'assets/logo/logo.svg';
 
 const Team: React.FC = () => {
   const { windowSize } = useContext(GlobalContext);
@@ -48,7 +49,7 @@ const Team: React.FC = () => {
   ];
 
   return (
-    <Container>
+    <Container backgroundImage={logo}>
       <div>
         <h1 className="title">NOSSA EQUIPE</h1>
         <p className="subtitle">
@@ -60,7 +61,7 @@ const Team: React.FC = () => {
       <div className="members">
         {showCarousel ? (
           <Carousel
-            emulateTouch={false}
+            emulateTouch={true}
             infiniteLoop={false}
             autoPlay={false}
             interval={5000}
