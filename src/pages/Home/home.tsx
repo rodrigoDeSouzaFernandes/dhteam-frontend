@@ -6,13 +6,12 @@ import PartnersAndSupporters from './partnersAndSupporters';
 import AboutUs from './aboutUs';
 import Benefits from './benefits';
 import Team from './team';
-import Facilities from './facilities/facilities';
-import Reviews from './reviews/reviews';
+import Facilities from './facilities';
+import Reviews from './reviews';
 
 const Home: React.FC = () => {
   return (
     <Container>
-      <Header />
       <Hero />
       <PartnersAndSupporters />
       <AboutUs />
