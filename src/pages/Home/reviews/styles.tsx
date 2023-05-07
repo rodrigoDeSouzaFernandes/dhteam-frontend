@@ -49,7 +49,7 @@ export const Container = styled.section`
 
       .review-text {
         font-family: ${(props) => props.theme.fonts.text};
-        font-size: 1.5rem;
+        font-size: 1rem;
         text-align: center;
         max-width: 400px;
         color: ${(props) => props.theme.colors.secondaryText};
