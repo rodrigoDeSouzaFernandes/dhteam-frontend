@@ -2,8 +2,11 @@ import React from 'react';
 import { Container, NavItem } from './styles';
 import { localIcon } from 'assets/icons';
 import logo from 'assets/logo/logo.svg';
+import { useLocation } from 'react-router-dom';
 
 const Header: React.FC = () => {
+  const { pathname } = useLocation();
+
   return (
     <Container>
       <div className="top-line">
@@ -31,10 +34,10 @@ const Header: React.FC = () => {
             className="logo"
           />
           <nav className="navbar">
-            <NavItem disabled={true} to="#">
+            <NavItem disabled={pathname === '/'} to="/">
               DH TEAM
             </NavItem>
-            <NavItem disabled={false} to="#">
+            <NavItem disabled={pathname === '/aulas'} to="/aulas">
               AULAS
             </NavItem>
             <NavItem disabled={false} to="#">

@@ -2,8 +2,11 @@ import React, { useCallback, useState } from 'react';
 import { MobileHeaderContainer, MobileMenu, NavItem } from './styles';
 import { menuIcon, localIcon, xIcon } from 'assets/icons';
 import Icon from 'components/icon';
+import { useLocation } from 'react-router-dom';
 
 const HeaderMobile: React.FC = () => {
+  const { pathname } = useLocation();
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toogleMobileMenu = useCallback((): void => {
@@ -39,10 +42,10 @@ const HeaderMobile: React.FC = () => {
             onClick={toogleMobileMenu}
           />
 
-          <NavItem disabled={true} to="#">
+          <NavItem disabled={pathname === '/'} to="/">
             DH TEAM
           </NavItem>
-          <NavItem disabled={false} to="#">
+          <NavItem disabled={pathname === '/aulas'} to="/aulas">
             AULAS
           </NavItem>
           <NavItem disabled={false} to="#">

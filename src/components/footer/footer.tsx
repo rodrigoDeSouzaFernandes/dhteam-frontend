@@ -32,18 +32,7 @@ const Footer: React.FC = () => {
         <a>O Jiu Jitsu</a>
         <a>Planos</a>
       </div>
-      <p className="copyright">
-        © 2023 Dh team brazillian jiu jitsu. Todos os direitos reservados.
-        Desenvolvido e projetado por{' '}
-        <a
-          href="https://www.linkedin.com/in/rodrigo-de-souza-fernandes/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Rodrigo de Souza Fernandes
-        </a>
-        .
-      </p>
+
       <div className="social-container">
         <a className="social">
           <img className="logo" src={facebookIcon} alt="fabebook logo" />
@@ -69,6 +58,18 @@ const Footer: React.FC = () => {
           </p>
         </a>
       </div>
+      <p className="copyright">
+        © 2023 Dh team brazillian jiu jitsu. Todos os direitos reservados.
+        Desenvolvido e projetado por{' '}
+        <a
+          href="https://www.linkedin.com/in/rodrigo-de-souza-fernandes/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Rodrigo de Souza Fernandes
+        </a>
+        .
+      </p>
     </Container>
   );
 };

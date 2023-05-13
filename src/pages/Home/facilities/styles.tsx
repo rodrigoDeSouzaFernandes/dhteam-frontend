@@ -19,10 +19,10 @@ export const Container = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
 
   .carousel-root {
-    width: 70%;
+    width: 100%;
     max-width: 1400px;
   }
 
@@ -66,6 +66,12 @@ export const Container = styled.section`
 
   @media screen and (min-width: 800px) {
     /* padding: 80px 160px; */
+    gap: 40px;
+
+    .carousel-root {
+      width: 70%;
+      max-width: 1400px;
+    }
 
     .title {
       h1 {

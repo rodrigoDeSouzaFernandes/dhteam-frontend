@@ -7,6 +7,9 @@ interface IGlobalContext {
 }
 
 const windowSize: Size = { isMobile: false, width: 0, height: 0 };
-const GlobalContext = createContext<IGlobalContext>({ windowSize });
+
+const GlobalContext = createContext<IGlobalContext>({
+  windowSize,
+});
 
 export default GlobalContext;

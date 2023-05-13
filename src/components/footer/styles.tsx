@@ -3,6 +3,11 @@ import styled, { keyframes } from 'styled-components';
 const slideLeft = keyframes`
   0% {
     transform: translateX(100%);
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 0;
   }
   100% {
     transform: translateX(0);
@@ -15,7 +20,7 @@ export const Container = styled.footer`
   justify-content: center;
   grid-template-columns: auto 1fr;
   gap: 40px;
-  padding: 20px 80px;
+  padding: 40px 80px 20px;
   background-color: ${(props) => props.theme.colors.primary};
   position: relative;
   overflow: hidden;
@@ -59,9 +64,10 @@ export const Container = styled.footer`
     padding: 2px;
     background-color: ${(props) => props.theme.colors.black.t3};
     position: absolute;
-    right: 0;
+    right: -2px;
     top: 0;
     height: 100%;
+    z-index: 0;
 
     .social {
       display: flex;
@@ -83,6 +89,7 @@ export const Container = styled.footer`
         width: 16px;
       }
       .text {
+        z-index: -1;
         display: none;
         position: absolute;
         align-items: center;
@@ -97,7 +104,7 @@ export const Container = styled.footer`
         height: 30px;
         padding-inline: 20px;
         border-radius: 3px;
-        animation: ${slideLeft} 0.1s linear;
+        animation: ${slideLeft} 0.25s linear;
         margin-right: 10px;
 
         &:before {
