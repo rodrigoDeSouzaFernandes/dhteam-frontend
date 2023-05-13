@@ -1,9 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container } from './styles';
 import Checkbox from 'components/checkbox';
 import Switch from 'components/switch';
+import Select from 'components/select/select';
+import { type Option } from 'types/select.types';
+
+const mockModalities = [
+  {
+    id: 1,
+    name: 'Jiu jitsu',
+    category: 'Adulto',
+    daysPerWeek: 3,
+    price: 100,
+  },
+  {
+    id: 1,
+    name: 'Jiu jitsu',
+    category: 'Adulto',
+    daysPerWeek: 5,
+    price: 120,
+  },
+  {
+    id: 1,
+    name: 'Jiu jitsu',
+    category: 'Infantil',
+    daysPerWeek: 3,
+    price: 80,
+  },
+  {
+    id: 2,
+    name: 'No GI',
+    category: 'Adulto',
+    daysPerWeek: 2,
+    price: 80,
+  },
+  {
+    id: 3,
+    name: 'Musculação',
+    category: 'Adulto',
+    daysPerWeek: 3,
+    price: 50,
+  },
+  {
+    id: 3,
+    name: 'Musculação',
+    category: 'Adulto',
+    daysPerWeek: 5,
+    price: 75,
+  },
+];
 
 const PlansAndPrices: React.FC = () => {
+  const [optionSelected, setOptionSelected] = useState<Option | null>(null);
+
   return (
     <Container>
       <div className="apply-max-width">
@@ -23,8 +72,10 @@ const PlansAndPrices: React.FC = () => {
               <th>Modalidade</th>
               <th>Categoria</th>
               <th>
-                <p>Frequência</p>
-                <small>(Dias por semana)</small>
+                <div className="th-frequency">
+                  <p>Frequência</p>
+                  <small>(Dias por semana)</small>
+                </div>
               </th>
               <th>Preço individual</th>
             </tr>
@@ -38,12 +89,66 @@ const PlansAndPrices: React.FC = () => {
                 <p>Jiu jitsu</p>
               </td>
               <td>
-                <p>Adulto</p>
+                <Select
+                  options={[
+                    { id: 1, label: 'Infantil' },
+                    { id: 2, label: 'Adulto' },
+                  ]}
+                  onSelect={setOptionSelected}
+                  value={optionSelected}
+                  placeholder="Selecione"
+                />
               </td>
               <td>
                 <div className="frequency">
                   <div>3</div>
                   <Switch checked={true} />
+                  <div>5</div>
+                </div>
+              </td>
+              <td>
+                <p>
+                  <b>R$</b> 120,00
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <Checkbox checked={true} />
+              </td>
+              <td>
+                <p>
+                  No GI <small>(sem kimono)</small>
+                </p>
+              </td>
+              <td>
+                <p className="category">Adulto</p>
+              </td>
+              <td>
+                <div className="frequency">
+                  <div>2</div>
+                </div>
+              </td>
+              <td>
+                <p>
+                  <b>R$</b> 120,00
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <Checkbox checked={false} />
+              </td>
+              <td>
+                <p>Musculação</p>
+              </td>
+              <td>
+                <p className="category">Todas as idades</p>
+              </td>
+              <td>
+                <div className="frequency">
+                  <div>3</div>
+                  <Switch checked={false} />
                   <div>5</div>
                 </div>
               </td>

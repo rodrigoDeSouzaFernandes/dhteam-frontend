@@ -35,6 +35,7 @@ export const Container = styled.section`
     border-spacing: 0;
     margin-bottom: 60px;
     text-align: left;
+    table-layout: unset;
 
     th {
       background-color: ${(props) => props.theme.colors.red.t3};
@@ -49,9 +50,16 @@ export const Container = styled.section`
       background-color: ${(props) => props.theme.colors.secondary};
       color: ${(props) => props.theme.colors.primary};
       font-size: 1rem;
-      font-weight: 600;
+      font-weight: 400;
       font-family: ${(props) => props.theme.fonts.text};
       padding: 12px;
+    }
+
+    .th-frequency {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     .frequency {
@@ -60,6 +68,7 @@ export const Container = styled.section`
       justify-content: center;
       gap: 10px;
       width: fit-content;
+      margin: auto;
 
       & > div {
         background-image: linear-gradient(#f4d03f, #cf0f05);
@@ -71,6 +80,10 @@ export const Container = styled.section`
         justify-content: center;
         border-radius: 100%;
       }
+    }
+
+    .category {
+      padding-left: 12px;
     }
   }
 `;
