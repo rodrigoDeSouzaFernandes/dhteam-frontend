@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Routes, Route } from 'react-router-dom';
 import { Header, Footer } from 'components';
-import { Home, Classes } from 'pages';
+import { Home, Classes, Faq } from 'pages';
 
 function App(): JSX.Element {
   return (
@@ -11,6 +11,7 @@ function App(): JSX.Element {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/aulas" element={<Classes />} />
+        <Route path="/faq" element={<Faq />} />
         <Route path="*" element={<p>Not found</p>} />
       </Routes>
       <Footer />
