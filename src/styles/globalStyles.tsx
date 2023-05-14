@@ -8,22 +8,22 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-
-  body {
-    background-color: #f7f7f7;
-  }
   
   html {
     font-size:12px;
   }
 
+  body {
+    background-color: #f7f7f7;
+  }
+  
   .apply-max-width {
     max-width: ${(props) => props.theme.defaultMaxWidth};
     margin-right: auto;
     margin-left: auto;
     width: 100%;
   }
-
+  
   .highlight {
     color: ${(props) => props.theme.colors.red.t1};
   }
@@ -33,15 +33,17 @@ const GlobalStyle = createGlobalStyle`
       font-size: 14px;
     }
   }
-
+  
   @media screen and (min-width: 800px) {
     html {
       font-size: 16px;
     }
   }
+  
 
 
-//Definições da barra de scroll da página
+       //Definições da barra de scroll da página
+
 
   /* Define a cor de fundo do track */
 ::-webkit-scrollbar-track {
@@ -123,6 +125,105 @@ scrollbar-color: ${(props) => props.theme.colors.tertiary} ${(props) =>
 *::-webkit-scrollbar-track {
   background-color: ${(props) => props.theme.colors.primary};
 }
+
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  
+
+.custom-scroll {
+ /* Define a aparência do scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Define a cor da track do scrollbar */
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+/* Define a cor do thumb do scrollbar */
+::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 999px;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+
+/* Define a cor do thumb para os navegadores Firefox e Edge */
+scrollbar-color: #ccc #fff;
+
+/* Define a aparência do scrollbar para o Internet Explorer */
+*::-ms-scrollbar {
+  width: 3px;
+}
+
+*::-ms-thumb {
+  background-color: #ccc;
+  border-radius: 999px;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+
+*::-ms-track {
+  background-color: #fff;
+}
+
+/* Define a aparência do scrollbar para o navegador Firefox */
+* {
+  scrollbar-color: #ccc #fff;
+}
+
+*::-moz-scrollbar {
+  width: 3px;
+}
+
+*::-moz-thumb {
+  background-color: #ccc;
+  border-radius: 999px;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+
+*::-moz-track {
+  background-color: #fff;
+}
+
+/* Define a aparência do scrollbar para o navegador Edge */
+*::-ms-thumb {
+  background-color: #ccc;
+  border-radius: 999px;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+
+*::-ms-track {
+  background-color: #fff;
+}
+
+*::-webkit-scrollbar {
+  width: 3px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 999px;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #fff;
+  border-radius: 999px;
+}
+
+}
+  
 
 `;
 

@@ -54,13 +54,13 @@ export const Container = styled.div`
     box-shadow: 1px 1px 3px #a1a1a1;
     border-radius: 3px;
 
-    & > button {
+    & > .option {
       border: none;
       background-color: white;
       text-align: left;
       padding: 8px 12px;
       font-family: ${(props) => props.theme.fonts.text};
-      font-weight: 400;
+      font-weight: 500;
 
       &:hover {
         background-color: #ff9e1b;

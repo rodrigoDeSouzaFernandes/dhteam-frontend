@@ -21,5 +21,5 @@ export default {
     text: fonts.montserrat,
   },
 
-  defaultMaxWidth: '1400px',
+  defaultMaxWidth: '1200px',
 };

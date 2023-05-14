@@ -7,7 +7,7 @@ export const Container = styled.section`
   justify-content: center;
   padding: 80px 40px;
 
-  background-image: linear-gradient(#2f3550, #222);
+  background-image: linear-gradient(#2f3550, #222, #222 80%, #fff 80%);
 
   .apply-max-width {
     & > .title {
@@ -31,59 +31,72 @@ export const Container = styled.section`
   }
 
   .build-custom-plan-table {
-    width: 100%;
-    border-spacing: 0;
+    /* overflow-x: hidden; */
+    overflow-y: auto;
     margin-bottom: 60px;
-    text-align: left;
-    table-layout: unset;
+    border-radius: 8px;
 
-    th {
-      background-color: ${(props) => props.theme.colors.red.t3};
-      color: ${(props) => props.theme.colors.white.t1};
-      font-size: 1rem;
-      font-weight: 600;
-      font-family: ${(props) => props.theme.fonts.text};
-      padding: 12px;
-    }
+    & > table {
+      width: 100%;
+      border-spacing: 0;
+      text-align: left;
 
-    td {
-      background-color: ${(props) => props.theme.colors.secondary};
-      color: ${(props) => props.theme.colors.primary};
-      font-size: 1rem;
-      font-weight: 400;
-      font-family: ${(props) => props.theme.fonts.text};
-      padding: 12px;
-    }
+      tbody {
+        tr:nth-child(even) {
+          td {
+            background-color: #f5f5f5;
+          }
+        }
+      }
 
-    .th-frequency {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
+      th {
+        background-color: ${(props) => props.theme.colors.red.t3};
+        color: ${(props) => props.theme.colors.white.t1};
+        font-size: 1rem;
+        font-weight: 600;
+        font-family: ${(props) => props.theme.fonts.text};
+        padding: 12px;
+      }
 
-    .frequency {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      width: fit-content;
-      margin: auto;
+      td {
+        background-color: ${(props) => props.theme.colors.secondary};
+        color: ${(props) => props.theme.colors.primary};
+        font-size: 1rem;
+        font-weight: 400;
+        font-family: ${(props) => props.theme.fonts.text};
+        padding: 12px;
+      }
 
-      & > div {
-        background-image: linear-gradient(#f4d03f, #cf0f05);
-        color: white;
-        width: 30px;
-        height: 30px;
+      .th-frequency {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .frequency {
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 100%;
-      }
-    }
+        gap: 10px;
+        width: fit-content;
+        margin: auto;
 
-    .category {
-      padding-left: 12px;
+        & > div {
+          background-image: linear-gradient(#f4d03f, #cf0f05);
+          color: white;
+          width: 30px;
+          height: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 100%;
+        }
+      }
+
+      .category {
+        padding-left: 12px;
+      }
     }
   }
 `;
