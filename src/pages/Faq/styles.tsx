@@ -2,9 +2,10 @@ import styled from 'styled-components';
 
 export const Container = styled.main`
   background-color: white;
+  padding: 80px 40px;
 
   & > .apply-max-width {
-    padding: 80px 40px;
+    /* max-width: 800px; */
   }
 
   & > div > .title {
@@ -19,5 +20,6 @@ export const Container = styled.main`
 
   .questions-container {
     margin-block: 30px;
+    font-size: 12px;
   }
 `;

@@ -20,8 +20,10 @@ export const Container = styled.div`
     gap: 20px;
     text-align: left;
     font-family: ${(props) => props.theme.fonts.text};
-    font-weight: 400;
-    font-size: 1rem;
+    font-weight: 500;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
 
     svg {
       width: 16px;
@@ -30,7 +32,7 @@ export const Container = styled.div`
     }
 
     &:hover {
-      background-color: rgb(250, 250, 250);
+      background-color: rgb(247, 247, 247);
     }
   }
   .content {
@@ -38,7 +40,7 @@ export const Container = styled.div`
     padding: 12px 24px 24px;
     font-family: ${(props) => props.theme.fonts.text};
     font-weight: 300;
-    font-size: 1rem;
-    color: ${(props) => props.theme.colors.black.t1};
+    font-size: 0.75rem;
+    color: ${(props) => props.theme.colors.black.t3};
   }
 `;
