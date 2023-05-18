@@ -40,7 +40,7 @@ const Header: React.FC = () => {
             <NavItem disabled={pathname === '/aulas'} to="/aulas">
               AULAS
             </NavItem>
-            <NavItem disabled={false} to="#">
+            <NavItem disabled={pathname === '/o-jiu-jitsu'} to="/o-jiu-jitsu">
               O JIU-JITSU
             </NavItem>
             {/* <NavItem disabled={false} to="#">
