@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.section`
   background-color: white;
-  padding: 80px 40px;
+  padding: 40px;
 
   & > div {
     display: flex;
@@ -14,9 +14,10 @@ export const Container = styled.section`
     border-bottom: 2px solid ${(props) => props.theme.colors.tertiary};
     font-size: 2rem;
     width: fit-content;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     color: ${(props) => props.theme.colors.text};
-    margin: 0 auto 24px;
+    margin-inline: auto;
+    margin-bottom: 20px;
   }
 
   p {
@@ -48,12 +49,15 @@ export const Container = styled.section`
   }
 
   @media screen and (min-width: 600px) {
+    padding: 80px 40px;
+
     & > div {
       display: block;
     }
 
     .title {
       margin: 0;
+      margin-bottom: 24px;
     }
 
     p {

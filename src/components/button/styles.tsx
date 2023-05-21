@@ -4,6 +4,9 @@ const progression = keyframes`
   0% {
     left: -100%;
   }
+  50% {
+    left: -100%;
+  }
   100% {
     left: 0;
   }
@@ -25,12 +28,13 @@ export const Primary = styled.button`
   position: relative;
   overflow: hidden;
   z-index: 0;
-  transition: all 0.25s;
+  transition: all 0.5s;
   border-radius: 8px;
   border: 2px solid ${(props) => props.theme.colors.red.t3};
 
   & > span:last-child {
     color: ${(props) => props.theme.colors.red.t1};
+    transition: all 0.5s;
   }
 
   &:hover {
@@ -48,7 +52,7 @@ export const Primary = styled.button`
 
       left: 0;
       top: 0;
-      animation: ${progression} 0.25s linear;
+      animation: ${progression} 0.5s linear;
     }
     color: ${(props) => props.theme.colors.white.t1};
     & > span:last-child {
