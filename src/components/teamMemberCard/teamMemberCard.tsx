@@ -1,9 +1,8 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { Container } from './styles';
 
 import { type Props } from './types';
 import { Icon } from 'ts-react-feather-icons';
-import GlobalContext from 'context/globalContext/globalContext';
 
 const TeamMemberCard: React.FC<Props> = ({
   beltColor,
@@ -13,13 +12,11 @@ const TeamMemberCard: React.FC<Props> = ({
 }) => {
   const [flipped, setFlipped] = useState(false);
 
-  const { windowSize } = useContext(GlobalContext);
-
   const flip = (): void => {
     setFlipped((prev) => !prev);
   };
 
-  const socialMediaIconSize = windowSize.width < 400 ? 16 : 24;
+  const socialMediaIconSize = size === 'large' ? 24 : 16;
 
   return (
     <Container {...rest} belt={beltColor} flipped={flipped} size={size}>
@@ -32,10 +29,20 @@ const TeamMemberCard: React.FC<Props> = ({
         </div>
         <p className="name">{name}</p>
         <div className="social-media">
-          <Icon name="instagram" color="white" size={socialMediaIconSize} />
-          <Icon name="facebook" color="white" size={socialMediaIconSize} />
-          <Icon name="phone" color="white" size={socialMediaIconSize} />
-          <Icon name="youtube" color="white" size={socialMediaIconSize} />
+          <a className="social-item" href="#">
+            <Icon name="instagram" color="white" size={socialMediaIconSize} />
+          </a>
+          <a className="social-item" href="#">
+            <Icon name="facebook" color="white" size={socialMediaIconSize} />
+          </a>
+
+          <a className="social-item" href="#">
+            <Icon name="phone" color="white" size={socialMediaIconSize} />
+          </a>
+
+          <a className="social-item" href="#">
+            <Icon name="youtube" color="white" size={socialMediaIconSize} />
+          </a>
         </div>
         <button className="button-info" onClick={flip}>
           <Icon

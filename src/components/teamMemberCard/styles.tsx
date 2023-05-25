@@ -10,14 +10,14 @@ const sizes = {
     cardHeight: '260px',
     imageSize: '150px',
     nameFontSize: '1.2rem',
-    gap: '15px',
+    gap: '10px',
   },
   large: {
     cardWidth: '300px',
     cardHeight: '400px',
     imageSize: '250px',
     nameFontSize: '1.5rem',
-    gap: '30px',
+    gap: '20px',
   },
 };
 
@@ -142,13 +142,26 @@ export const Container = styled.div<ContainerProps>`
     left: 0;
     bottom: 0;
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     transform: translateY(100%);
     transition: all 0.5s;
+
+    .social-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+      transition: all 0.5s;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+        border-radius: 100%;
+      }
+    }
   }
 
   .button-info {

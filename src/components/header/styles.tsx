@@ -154,7 +154,7 @@ export const MobileHeaderContainer = styled.header`
 
 export const MobileMenu = styled.nav`
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   width: 100%;
   height: 100vh;
   background-color: ${(props) => props.theme.colors.white.t2};

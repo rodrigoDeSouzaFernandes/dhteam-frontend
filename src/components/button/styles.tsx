@@ -12,7 +12,7 @@ const progression = keyframes`
   }
 `;
 
-export const Primary = styled.button`
+export const Container = styled.button`
   cursor: pointer;
   border: none;
   background-color: ${(props) => props.theme.colors.white.t1};

@@ -1,19 +1,11 @@
 import React, { type HtmlHTMLAttributes } from 'react';
-import { Primary } from './styles';
-
-enum ButtonTypes {
-  primary,
-  secondary,
-}
+import { Container } from './styles';
 
 interface Props extends HtmlHTMLAttributes<HTMLButtonElement> {
   text: string;
-  type?: ButtonTypes;
 }
 
-const Button: React.FC<Props> = ({ text, type = 'primary', ...rest }) => {
-  const Container = Primary;
-
+const Button: React.FC<Props> = ({ text, ...rest }) => {
   return (
     <Container {...rest}>
       {text.split(' ').map((word, index) => (

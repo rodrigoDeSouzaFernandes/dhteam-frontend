@@ -29,6 +29,7 @@ export const Container = styled.div`
       width: 16px;
       stroke: ${(props) => props.theme.colors.black.t5};
       stroke-width: 1px;
+      min-width: 16px;
     }
 
     &:hover {

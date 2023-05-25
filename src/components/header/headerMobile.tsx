@@ -54,7 +54,7 @@ const HeaderMobile: React.FC = () => {
           {/* <NavItem disabled={false} to="#">
               Blog
             </NavItem> */}
-          <NavItem disabled={false} to="#">
+          <NavItem disabled={pathname === '/contato'} to="/contato">
             CONTATO
           </NavItem>
           <NavItem disabled={pathname === '/faq'} to="/faq">
