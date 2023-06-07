@@ -8,11 +8,10 @@ const usePartnersAndSupporters = (): IUsePartnersAndSupporters => {
   const getPartners = (): void => {
     Api.get('/partners?populate=*')
       .then((response) => {
-        console.log(response.data.data);
         setPartners(response.data.data);
       })
       .catch((error) => {
-        console.log(error);
+        console.warn(error);
       });
   };
 

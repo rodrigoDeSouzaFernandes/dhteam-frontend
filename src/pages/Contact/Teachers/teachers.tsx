@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Container } from './styles';
-import { TeamMemberCard } from 'components';
-import GlobalContext from 'context/globalContext/globalContext';
+// import { TeamMemberCard } from 'components';
+// import GlobalContext from 'context/globalContext/globalContext';
 
 const Teachers: React.FC = () => {
-  const { windowSize } = useContext(GlobalContext);
-  const cardSize = windowSize.width > 1020 ? 'large' : 'small';
+  // const { windowSize } = useContext(GlobalContext);
+  // const cardSize = windowSize.width > 1020 ? 'large' : 'small';
 
   return (
     <Container>
@@ -18,9 +18,9 @@ const Teachers: React.FC = () => {
           agora mesmo!
         </p>
         <div className="cards-container">
-          <TeamMemberCard name="Douglas" beltColor="black" size={cardSize} />
+          {/* <TeamMemberCard name="Douglas" beltColor="black" size={cardSize} />
           <TeamMemberCard name="Aline" beltColor="black" size={cardSize} />
-          <TeamMemberCard name="Rodrigão" beltColor="brown" size={cardSize} />
+          <TeamMemberCard name="Rodrigão" beltColor="brown" size={cardSize} /> */}
         </div>
       </div>
     </Container>

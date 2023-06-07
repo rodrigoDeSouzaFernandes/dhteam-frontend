@@ -17,7 +17,7 @@ export const Container = styled.section<ContainerProps>`
   background-color: transparent;
 
   padding: 40px 20px;
-  gap: 40px;
+  gap: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,18 +28,18 @@ export const Container = styled.section<ContainerProps>`
     border-bottom: 2px solid ${(props) => props.theme.colors.tertiary};
     font-size: 3rem;
     width: fit-content;
-    margin-bottom: 10px;
     letter-spacing: 3px;
     color: ${(props) => props.theme.colors.text};
     margin: auto;
+    margin-bottom: 16px;
   }
 
   .subtitle {
     font-family: ${(props) => props.theme.fonts.text};
-    max-width: 400px;
-    text-align: center;
+    max-width: 1000px;
+    /* text-align: center; */
     color: ${(props) => props.theme.colors.secondaryText};
-    padding: 10px 0;
+    padding: 5px 0;
     line-height: 140%;
   }
 
@@ -105,24 +105,24 @@ export const Container = styled.section<ContainerProps>`
     padding: 80px 40px;
 
     .subtitle {
-      max-width: 600px;
+      /* max-width: 600px; */
     }
 
     & > .members {
       display: grid;
-      grid-template-columns: repeat(2, auto);
+      grid-template-columns: repeat(3, auto);
 
       .team-member-card {
         margin-bottom: 0px;
       }
     }
   }
-  @media screen and (min-width: 1100px) {
+  /* @media screen and (min-width: 1100px) {
     & > .members {
       display: grid;
       grid-template-columns: repeat(3, auto);
     }
-  }
+  } */
   @media screen and (min-width: 1450px) {
     & > .members {
       display: grid;

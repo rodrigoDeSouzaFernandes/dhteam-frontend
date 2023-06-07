@@ -1,14 +1,7 @@
-import React, {
-  type ReactChild,
-  useContext,
-  useMemo,
-  type ReactElement,
-} from 'react';
+import React, { useContext, useMemo } from 'react';
 import { Container } from './styles';
 import { Carousel } from 'react-responsive-carousel';
 
-import fenixAcademia from 'assets/partners/fenix-academia.svg';
-import realBarberShop from 'assets/partners/realbarbershop.svg';
 import GlobalContext from 'context/globalContext/globalContext';
 import usePartnersAndSupporters from './usePartnersAndSupporters';
 
@@ -52,8 +45,6 @@ const PartnersAndSupporters: React.FC = () => {
             const image = `http://localhost:1337${String(
               logo?.data.attributes.url,
             )}`;
-
-            console.log(image);
 
             return (
               <div className="partner" key={`partner=${String(id)}`}>
