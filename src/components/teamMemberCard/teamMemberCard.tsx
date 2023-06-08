@@ -151,8 +151,11 @@ const TeamMemberCard: React.FC<Props> = ({
               </div>
               <div className="item two-columns">
                 <span>graduação:</span>
-                <p>{`Faixa ${portugueseBelts[beltColor]} ${
-                  beltRank !== null ? String(beltRank) + ' graus' : ''
+                <p>{`Faixa ${portugueseBelts[beltColor]} - ${
+                  beltRank !== null
+                    ? String(beltRank) +
+                      ` grau${Number(beltRank) > 1 ? 's' : ''}`
+                    : ''
                 }`}</p>
               </div>
               {phone !== null && (

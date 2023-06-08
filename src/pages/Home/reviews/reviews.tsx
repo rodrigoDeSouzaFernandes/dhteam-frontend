@@ -1,11 +1,22 @@
-import React, { useContext } from 'react';
+import React, { type ReactChild, useContext } from 'react';
 import { Container } from './styles';
 import noPic from '../../../assets/other/no-pic.svg';
 import GlobalContext from 'context/globalContext/globalContext';
 import { Carousel } from 'react-responsive-carousel';
+import useReviews from './useReviews';
+import { Button } from 'components';
+import { useNavigate } from 'react-router-dom';
 
 const Reviews: React.FC = () => {
   const { windowSize } = useContext(GlobalContext);
+
+  const navigate = useNavigate();
+
+  const { reviews } = useReviews();
+
+  const redirectToReviewsPage = (): void => {
+    navigate('/depoimentos');
+  };
 
   return (
     <Container>
@@ -28,78 +39,49 @@ const Reviews: React.FC = () => {
               swipeScrollTolerance={50}
               showArrows={false}
             >
-              <div className="review">
-                <img src={noPic} />
-                <p className="review-text">
-                  &quot;Estou treinando na academia há seis meses e já sinto uma
-                  enorme evolução no meu desempenho. A equipe é muito
-                  profissional e atenciosa, sempre disposta a ajudar e motivar.
-                  Recomendo a todos que querem começar a praticar jiu
-                  jitsu!&quot;
-                </p>
-                <span className="name">~ Sofia Oliveira</span>
-              </div>
-              <div className="review">
-                <img src={noPic} />
-                <p className="review-text">
-                  &quot;Eu nunca imaginei que seria capaz de fazer jiu jitsu,
-                  mas a equipe da academia me fez acreditar que eu posso
-                  conquistar qualquer coisa com esforço e dedicação. Eles me
-                  ajudaram a superar meus medos e limitações e agora estou
-                  amando cada minuto no tatame.&quot;
-                </p>
-                <span className="name">~ joão santos</span>
-              </div>
-              <div className="review">
-                <img src={noPic} />
-                <p className="review-text">
-                  &quot;A academia não é só um lugar onde eu vou para treinar, é
-                  uma segunda casa. Os instrutores e alunos são como uma família
-                  para mim, sempre me apoiando e incentivando. Além disso, as
-                  aulas são muito divertidas e desafiadoras, eu nunca me canso
-                  de aprender coisas novas.&quot;
-                </p>
-                <span className="name">~ MIGUEL AUGUSTO</span>
-              </div>
+              {reviews.map((review, index): ReactChild => {
+                console.log(review.attributes.photo?.data?.attributes?.url);
+                const image =
+                  typeof review.attributes.photo?.data?.attributes?.url ===
+                  'string'
+                    ? `http://localhost:1337${review.attributes.photo?.data?.attributes?.url}`
+                    : noPic;
+
+                return (
+                  <div className="review" key={`review-item=${index}`}>
+                    <img src={image} />
+                    <p className="review-text">{review.attributes.content}</p>
+                    <span className="name">~ {review.attributes.author}</span>
+                  </div>
+                );
+              })}
             </Carousel>
           ) : (
             <>
-              <div className="review">
-                <img src={noPic} />
-                <p className="review-text">
-                  &quot;Estou treinando na academia há seis meses e já sinto uma
-                  enorme evolução no meu desempenho. A equipe é muito
-                  profissional e atenciosa, sempre disposta a ajudar e motivar.
-                  Recomendo a todos que querem começar a praticar jiu
-                  jitsu!&quot;
-                </p>
-                <span className="name">~ Sofia Oliveira</span>
-              </div>
-              <div className="review">
-                <img src={noPic} />
-                <p className="review-text">
-                  &quot;Eu nunca imaginei que seria capaz de fazer jiu jitsu,
-                  mas a equipe da academia me fez acreditar que eu posso
-                  conquistar qualquer coisa com esforço e dedicação. Eles me
-                  ajudaram a superar meus medos e limitações e agora estou
-                  amando cada minuto no tatame.&quot;
-                </p>
-                <span className="name">~ joão santos</span>
-              </div>
-              <div className="review">
-                <img src={noPic} />
-                <p className="review-text">
-                  &quot;A academia não é só um lugar onde eu vou para treinar, é
-                  uma segunda casa. Os instrutores e alunos são como uma família
-                  para mim, sempre me apoiando e incentivando. Além disso, as
-                  aulas são muito divertidas e desafiadoras, eu nunca me canso
-                  de aprender coisas novas.&quot;
-                </p>
-                <span className="name">~ MIGUEL AUGUSTO</span>
-              </div>
+              {reviews.map((review, index): ReactChild => {
+                console.log(review.attributes.photo?.data?.attributes?.url);
+                const image =
+                  typeof review.attributes.photo?.data?.attributes?.url ===
+                  'string'
+                    ? `http://localhost:1337${review.attributes.photo?.data?.attributes?.url}`
+                    : noPic;
+
+                return (
+                  <div className="review" key={`review-item=${index}`}>
+                    <img src={image} />
+                    <p className="review-text">{review.attributes.content}</p>
+                    <span className="name">~ {review.attributes.author}</span>
+                  </div>
+                );
+              })}
             </>
           )}
         </div>
+        <Button
+          text="ver mais"
+          className="see-more-btn"
+          onClick={redirectToReviewsPage}
+        />
       </div>
     </Container>
   );

@@ -62,6 +62,10 @@ export const Container = styled.section`
     }
   }
 
+  .see-more-btn {
+    display: none;
+  }
+
   //carousel
   .carousel-root {
     max-width: 1400px;
@@ -102,6 +106,14 @@ export const Container = styled.section`
           font-size: 1rem;
         }
       }
+    }
+
+    .see-more-btn {
+      display: flex;
+      width: fit-content;
+      border-color: ${(props) => props.theme.colors.tertiary};
+      margin-left: auto;
+      margin-top: 20px;
     }
   }
 
