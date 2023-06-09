@@ -63,7 +63,12 @@ export const Container = styled.section`
   }
 
   .see-more-btn {
-    display: none;
+    display: flex;
+    padding-inline: 40px;
+    border-color: ${(props) => props.theme.colors.tertiary};
+    margin: auto;
+    margin-top: 30px;
+    letter-spacing: 1px;
   }
 
   //carousel
@@ -106,14 +111,6 @@ export const Container = styled.section`
           font-size: 1rem;
         }
       }
-    }
-
-    .see-more-btn {
-      display: flex;
-      width: fit-content;
-      border-color: ${(props) => props.theme.colors.tertiary};
-      margin-left: auto;
-      margin-top: 20px;
     }
   }
 

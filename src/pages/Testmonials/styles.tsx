@@ -4,6 +4,17 @@ export const Container = styled.main`
   background-color: white;
   padding: 80px 40px;
 
+  background: linear-gradient(
+    45deg,
+    #ffffff 25%,
+    #f9f9f9 25%,
+    #f9f9f9 50%,
+    #ffffff 50%,
+    #ffffff 75%,
+    #f9f9f9 75%
+  );
+  background-size: 50px 150px;
+
   span.highlight {
     color: ${(props) => props.theme.colors.red.t3};
     margin-left: 5px;
@@ -25,7 +36,13 @@ export const Container = styled.main`
 
   .testmonials {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  @media screen and (min-width: 400px) {
+    .testmonials {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
   }
 `;

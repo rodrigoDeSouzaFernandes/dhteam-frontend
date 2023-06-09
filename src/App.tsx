@@ -3,11 +3,13 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Header, Footer } from 'components';
 import { Home, Classes, Faq, JiuJitsu, Contact, Testmonials } from 'pages';
+import ScrollToTop from 'helpers/customHooks/scrollToTop';
 
 function App(): JSX.Element {
   return (
     <>
       <Header />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/aulas" element={<Classes />} />

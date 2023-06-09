@@ -111,18 +111,14 @@ export const Container = styled.section<ContainerProps>`
     & > .members {
       display: grid;
       grid-template-columns: repeat(3, auto);
+      min-height: 300px;
 
       .team-member-card {
         margin-bottom: 0px;
       }
     }
   }
-  /* @media screen and (min-width: 1100px) {
-    & > .members {
-      display: grid;
-      grid-template-columns: repeat(3, auto);
-    }
-  } */
+
   @media screen and (min-width: 1450px) {
     & > .members {
       display: grid;

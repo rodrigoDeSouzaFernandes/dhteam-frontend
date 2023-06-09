@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  /* display: grid; */
-  /* grid-template-columns: 25% auto; */
   gap: 4px 16px;
   padding: 24px;
-  /* border: 1px solid; */
   border-radius: 12px;
   box-shadow: 1px 2px 5px #bbbbbb;
+  background-color: #f4f7f8;
 
   .profile-image {
     width: 25%;
@@ -20,6 +18,7 @@ export const Container = styled.div`
     shape-outside: circle();
     margin-right: 30px;
     margin-bottom: 10px;
+    background-color: white;
   }
 
   .name {
@@ -27,13 +26,21 @@ export const Container = styled.div`
     font-weight: 500;
     font-size: 1.5rem;
     margin-bottom: 10px;
+    color: #222;
   }
 
   .testmonial {
     font-family: ${(props) => props.theme.fonts.text};
     font-weight: 500;
     font-size: 1rem;
-    color: #444;
+    color: #666;
     padding-left: 10px;
+    font-size: 1rem;
+  }
+
+  @media screen and (min-width: 500px) {
+    .testmonial {
+      font-size: 14px;
+    }
   }
 `;

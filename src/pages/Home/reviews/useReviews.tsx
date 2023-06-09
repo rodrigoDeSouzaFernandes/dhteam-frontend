@@ -1,16 +1,21 @@
 import { useEffect, useState } from 'react';
-import { type IuseReviews } from './types';
+import { type Reviews, type IuseReviews } from './types';
 import { Api } from 'services/api';
 
 const useReviews = (): IuseReviews => {
-  const [reviews, setReviews] = useState([]);
+  const [reviews, setReviews] = useState<Reviews[]>([]);
 
-  console.log({ reviews });
+  const randomSelection = (items: Reviews[]): Reviews[] => {
+    return items
+      .sort(() => Math.random() - 0.5)
+      .filter((_elem, index) => index <= 2);
+  };
 
   const getReviews = (): void => {
     Api.get('/testmonials?populate=*')
       .then((response) => {
-        setReviews(response.data.data);
+        const obj = randomSelection(response.data.data);
+        setReviews(obj);
       })
       .catch((error) => {
         console.log(error);

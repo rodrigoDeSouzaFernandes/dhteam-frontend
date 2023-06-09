@@ -1,24 +1,21 @@
 import React from 'react';
 import { Container } from './styles';
+import { type IProps } from './types';
+import noPic from 'assets/other/no-pic.svg';
+import { backendUrl } from 'services/api';
 
-const TestmonialCard: React.FC = () => {
+const TestmonialCard: React.FC<IProps> = ({ image, name, testmonial }) => {
+  const imageUrl = typeof image !== 'string' ? noPic : `${backendUrl}${image}`;
+
   return (
     <Container>
       <img
         className="profile-image"
-        src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg"
-        alt=""
+        src={imageUrl}
+        alt={`foto de perfil: ${String(name)}, autor(a) deste depoimento`}
       />
-      <h1 className="name">~ Nome da Pessoa</h1>
-      <p className="testmonial">
-        Texto do depoimento Texto do depoimentoTexto do depoimento Texto do
-        depoimento Texto do depoimento Texto do depoimento Texto do depoimento
-        Texto do depoimento Texto do depoimento Texto do depoimentoTexto do
-        depoimento Texto do depoimento Texto do depoimento Texto do depoimento
-        Texto do depoimento Texto do depoimento Texto do depoimento Texto do
-        depoimentoTexto do depoimento Texto do depoimento Texto do depoimento
-        Texto do depoimento Texto do depoimento Texto do depoimento
-      </p>
+      <h1 className="name">~ {name}</h1>
+      <p className="testmonial">{testmonial}</p>
     </Container>
   );
 };

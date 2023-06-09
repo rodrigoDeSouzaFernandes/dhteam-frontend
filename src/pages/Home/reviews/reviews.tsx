@@ -6,6 +6,7 @@ import { Carousel } from 'react-responsive-carousel';
 import useReviews from './useReviews';
 import { Button } from 'components';
 import { useNavigate } from 'react-router-dom';
+import { backendUrl } from 'services/api';
 
 const Reviews: React.FC = () => {
   const { windowSize } = useContext(GlobalContext);
@@ -44,7 +45,7 @@ const Reviews: React.FC = () => {
                 const image =
                   typeof review.attributes.photo?.data?.attributes?.url ===
                   'string'
-                    ? `http://localhost:1337${review.attributes.photo?.data?.attributes?.url}`
+                    ? `${backendUrl}${review.attributes.photo?.data?.attributes?.url}`
                     : noPic;
 
                 return (
@@ -63,7 +64,7 @@ const Reviews: React.FC = () => {
                 const image =
                   typeof review.attributes.photo?.data?.attributes?.url ===
                   'string'
-                    ? `http://localhost:1337${review.attributes.photo?.data?.attributes?.url}`
+                    ? `${backendUrl}${review.attributes.photo?.data?.attributes?.url}`
                     : noPic;
 
                 return (

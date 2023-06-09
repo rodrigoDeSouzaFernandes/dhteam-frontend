@@ -1,6 +1,6 @@
 import { type Image } from 'types/global.types';
 
-export interface Reviews {
+interface Testmonials {
   id: number;
   attributes: {
     author: string;
@@ -9,6 +9,6 @@ export interface Reviews {
   };
 }
 
-export interface IuseReviews {
-  reviews: Reviews[];
+export interface IuseTestmonials {
+  testmonials: Testmonials[];
 }

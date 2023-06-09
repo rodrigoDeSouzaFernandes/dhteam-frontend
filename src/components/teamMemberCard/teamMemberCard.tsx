@@ -10,6 +10,7 @@ import {
   Youtube,
 } from 'ts-react-feather-icons';
 import getWhatsappLink from 'helpers/functions/getWhatsappLink';
+import { backendUrl } from 'services/api';
 
 const TeamMemberCard: React.FC<Props> = ({
   beltColor,
@@ -112,7 +113,7 @@ const TeamMemberCard: React.FC<Props> = ({
         <div className="image-container">
           <img
             className="profile-picture"
-            src={`http://localhost:1337${String(photo)}`}
+            src={`${backendUrl}${String(photo)}`}
           />
         </div>
         <p className="name">{nickname ?? name}</p>
@@ -137,7 +138,7 @@ const TeamMemberCard: React.FC<Props> = ({
             <div className="image-container">
               <img
                 className="profile-picture"
-                src={`http://localhost:1337${String(photo)}`}
+                src={`${backendUrl}${String(photo)}`}
               />
             </div>
             <div className="personal-data">

@@ -4,6 +4,7 @@ import { Carousel } from 'react-responsive-carousel';
 
 import GlobalContext from 'context/globalContext/globalContext';
 import usePartnersAndSupporters from './usePartnersAndSupporters';
+import { backendUrl } from 'services/api';
 
 const PartnersAndSupporters: React.FC = () => {
   const { windowSize } = useContext(GlobalContext);
@@ -42,9 +43,7 @@ const PartnersAndSupporters: React.FC = () => {
               attributes: { logo, name },
             } = partner;
 
-            const image = `http://localhost:1337${String(
-              logo?.data.attributes.url,
-            )}`;
+            const image = `${backendUrl}${String(logo?.data.attributes.url)}`;
 
             return (
               <div className="partner" key={`partner=${String(id)}`}>

@@ -1,8 +1,11 @@
 import React from 'react';
 import { Container } from './styles';
 import TestmonialCard from 'components/testmonialCard/testmonialCard';
+import useTestmonials from './useTestmonials';
 
 const Testmonials: React.FC = () => {
+  const { testmonials } = useTestmonials();
+
   return (
     <Container>
       <div className="apply-max-width content">
@@ -29,15 +32,14 @@ const Testmonials: React.FC = () => {
         </p>
 
         <div className="testmonials">
-          <TestmonialCard />
-          <TestmonialCard />
-          <TestmonialCard />
-          <TestmonialCard />
-          <TestmonialCard />
-          <TestmonialCard />
-          <TestmonialCard />
-          <TestmonialCard />
-          <TestmonialCard />
+          {testmonials.map((testmonial) => (
+            <TestmonialCard
+              key={`testmonial-${testmonial.id}`}
+              name={testmonial.attributes.author}
+              testmonial={testmonial.attributes.content}
+              image={testmonial.attributes.photo.data?.attributes.url}
+            />
+          ))}
         </div>
       </div>
     </Container>
