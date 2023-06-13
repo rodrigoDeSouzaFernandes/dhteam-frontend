@@ -2,6 +2,16 @@ import styled from 'styled-components';
 
 export const Container = styled.section`
   padding: 80px 40px;
+  background: linear-gradient(
+    45deg,
+    #f7f7f7 25%,
+    #fafafa 25%,
+    #fafafa 50%,
+    #f7f7f7 50%,
+    #f7f7f7 75%,
+    #fafafa 75%
+  );
+  background-size: 50px 150px;
 
   & > .apply-max-width {
     display: flex;

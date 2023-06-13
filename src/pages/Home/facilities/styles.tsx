@@ -4,16 +4,17 @@ export const Container = styled.section`
   padding: 40px 20px;
 
   background-image: linear-gradient(
-    90deg,
-    #555,
-    #444,
-    #333,
-    #222,
-    #333,
-    #444,
-    #555
+    45deg,
+    #2e2e2e 25%,
+    #333 25%,
+    #333 50%,
+    #2e2e2e 50%,
+    #2e2e2e 75%,
+    #333 75%
   );
   color: white;
+
+  background-size: 50px 150px;
 
   display: flex;
   flex-direction: column;
@@ -23,7 +24,33 @@ export const Container = styled.section`
 
   .carousel-root {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1200px;
+
+    .carousel {
+      .thumbs-wrapper {
+        .thumbs {
+          .thumb {
+            aspect-ratio: 3/2;
+            object-fit: contain;
+          }
+
+          .selected {
+            border-color: red;
+          }
+        }
+      }
+    }
+  }
+
+  .gallery-photo-item {
+    /* max-height: 600px; */
+    background-color: rgba(0, 0, 0, 0.25);
+
+    img {
+      aspect-ratio: 3/2.25;
+      max-height: 75vh;
+      object-fit: contain;
+    }
   }
 
   .title {
@@ -67,11 +94,6 @@ export const Container = styled.section`
   @media screen and (min-width: 800px) {
     /* padding: 80px 160px; */
     gap: 40px;
-
-    .carousel-root {
-      width: 70%;
-      max-width: 1400px;
-    }
 
     .title {
       h1 {

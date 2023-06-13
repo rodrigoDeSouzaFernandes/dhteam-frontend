@@ -1,8 +1,12 @@
 import React from 'react';
 import { Container } from './styles';
 import { Carousel } from 'react-responsive-carousel';
+import useFacilities from './useFacilities';
+import { backendUrl } from 'services/api';
 
 const Facilities: React.FC = () => {
+  const { photoGallery } = useFacilities();
+
   return (
     <Container>
       <div className="title">
@@ -20,60 +24,22 @@ const Facilities: React.FC = () => {
         centerMode={true}
         swipeScrollTolerance={50}
       >
-        <div>
-          <img
-            src={
-              'https://news.gympass.com/wp-content/uploads/2018/07/escolher-a-melhor-academia.jpg'
-            }
-            alt="logo parceiro: real barber shop"
-            className="image"
-          />
-        </div>
-        <div>
-          <img
-            src={
-              'https://news.gympass.com/wp-content/uploads/2018/07/escolher-a-melhor-academia.jpg'
-            }
-            alt="logo parceiro: fenix academia"
-            className="image"
-          />
-        </div>
-        <div>
-          <img
-            src={
-              'https://news.gympass.com/wp-content/uploads/2018/07/escolher-a-melhor-academia.jpg'
-            }
-            alt="logo parceiro: real barber shop"
-            className="image"
-          />
-        </div>
-        <div>
-          <img
-            src={
-              'https://news.gympass.com/wp-content/uploads/2018/07/escolher-a-melhor-academia.jpg'
-            }
-            alt="logo parceiro: fenix academia"
-            className="image"
-          />
-        </div>
-        <div>
-          <img
-            src={
-              'https://news.gympass.com/wp-content/uploads/2018/07/escolher-a-melhor-academia.jpg'
-            }
-            alt="logo parceiro: real barber shop"
-            className="image"
-          />
-        </div>
-        <div>
-          <img
-            src={
-              'https://news.gympass.com/wp-content/uploads/2018/07/escolher-a-melhor-academia.jpg'
-            }
-            alt="logo parceiro: fenix academia"
-            className="image"
-          />
-        </div>
+        {photoGallery.map((photo) => {
+          const imageUrl = `${backendUrl}${photo.attributes.image.data.attributes.url}`;
+
+          return (
+            <div
+              key={`gallery-photo-${photo.id}`}
+              className="gallery-photo-item"
+            >
+              <img
+                src={imageUrl}
+                alt={`imagem da galeria ${photo.id}.`}
+                className="image"
+              />
+            </div>
+          );
+        })}
       </Carousel>
     </Container>
   );

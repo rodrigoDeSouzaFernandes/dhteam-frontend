@@ -7,11 +7,11 @@ export const Container = styled.main`
   background: linear-gradient(
     45deg,
     #ffffff 25%,
-    #f9f9f9 25%,
-    #f9f9f9 50%,
+    #fafafa 25%,
+    #fafafa 50%,
     #ffffff 50%,
     #ffffff 75%,
-    #f9f9f9 75%
+    #fafafa 75%
   );
   background-size: 50px 150px;
 
