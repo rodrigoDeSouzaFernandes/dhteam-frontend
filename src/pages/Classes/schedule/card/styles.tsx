@@ -44,6 +44,7 @@ export const Container = styled.div<ContainerProps>`
   .modality {
     font-size: 1.75rem;
     align-self: center;
+    font-weight: 500;
   }
   .category {
     background-color: ${(props) => colors[props.color]};

@@ -10,8 +10,16 @@ export const Container = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 40px;
   }
-
+  .see-more-button {
+    display: flex;
+    padding-inline: 40px;
+    border-color: ${(props) => props.theme.colors.tertiary};
+    margin: auto;
+    margin-top: 30px;
+    letter-spacing: 1px;
+  }
   .title {
     font-family: ${(props) => props.theme.fonts.title};
     font-size: 2rem;
@@ -65,7 +73,7 @@ export const Container = styled.section`
   }
 
   .carousel-container {
-    margin: 0px auto 40px;
+    margin: 0px auto;
     display: flex;
     align-items: center;
     justify-content: center;

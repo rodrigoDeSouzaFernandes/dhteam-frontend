@@ -41,11 +41,11 @@ export const Container = styled.div`
     & > .day {
       font-family: ${(props) => props.theme.fonts.title};
       color: ${(props) => props.theme.colors.secondaryText};
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
 
     & > .day.selected {
-      font-size: 2rem;
+      font-size: 1.8rem;
       color: ${(props) => props.theme.colors.black.t3};
     }
   }
@@ -60,6 +60,18 @@ export const Container = styled.div`
 
     & > * {
       animation: ${emerge} 0.5s linear;
+    }
+  }
+
+  @media screen and (min-width: 400px) {
+    .week-day-selection {
+      & > .day {
+        font-size: 1.5rem;
+      }
+
+      & > .day.selected {
+        font-size: 2rem;
+      }
     }
   }
 `;

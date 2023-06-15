@@ -5,9 +5,13 @@ import { Carousel } from 'react-responsive-carousel';
 import GlobalContext from 'context/globalContext/globalContext';
 import usePartnersAndSupporters from './usePartnersAndSupporters';
 import { backendUrl } from 'services/api';
+import { Button } from 'components';
+import { useNavigate } from 'react-router-dom';
 
 const PartnersAndSupporters: React.FC = () => {
   const { windowSize } = useContext(GlobalContext);
+
+  const navigate = useNavigate();
 
   const centerSlidePercentage = useMemo(
     () => (windowSize.width < 650 ? 100 : 33),
@@ -55,6 +59,13 @@ const PartnersAndSupporters: React.FC = () => {
             );
           })}
         </Carousel>
+        <Button
+          className="see-more-button"
+          text="ver mais"
+          onClick={() => {
+            navigate('/parceiros-e-apoiadores');
+          }}
+        />
       </div>
     </Container>
   );

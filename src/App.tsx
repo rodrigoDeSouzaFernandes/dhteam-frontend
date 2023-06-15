@@ -2,7 +2,15 @@ import React from 'react';
 
 import { Routes, Route } from 'react-router-dom';
 import { Header, Footer } from 'components';
-import { Home, Classes, Faq, JiuJitsu, Contact, Testmonials } from 'pages';
+import {
+  Home,
+  Classes,
+  Faq,
+  JiuJitsu,
+  Contact,
+  Testmonials,
+  Partners,
+} from 'pages';
 import ScrollToTop from 'helpers/customHooks/scrollToTop';
 
 function App(): JSX.Element {
@@ -17,6 +25,7 @@ function App(): JSX.Element {
         <Route path="/o-jiu-jitsu" element={<JiuJitsu />} />
         <Route path="/contato" element={<Contact />} />
         <Route path="/depoimentos" element={<Testmonials />} />
+        <Route path="/parceiros-e-apoiadores" element={<Partners />} />
         <Route path="*" element={<p>Not found</p>} />
       </Routes>
       <Footer />
