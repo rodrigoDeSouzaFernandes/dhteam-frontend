@@ -41,7 +41,6 @@ const Reviews: React.FC = () => {
               showArrows={false}
             >
               {reviews.map((review, index): ReactChild => {
-                console.log(review.attributes.photo?.data?.attributes?.url);
                 const image =
                   typeof review.attributes.photo?.data?.attributes?.url ===
                   'string'
@@ -60,7 +59,6 @@ const Reviews: React.FC = () => {
           ) : (
             <>
               {reviews.map((review, index): ReactChild => {
-                console.log(review.attributes.photo?.data?.attributes?.url);
                 const image =
                   typeof review.attributes.photo?.data?.attributes?.url ===
                   'string'

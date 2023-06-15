@@ -1,8 +1,24 @@
 import React from 'react';
 import { Container } from './styles';
 import Card from '../card/card';
+import { type Schedule } from '../types';
 
-const DesktopSchedule: React.FC = () => {
+interface IProps {
+  classes: Schedule;
+}
+
+const DesktopSchedule: React.FC<IProps> = (props) => {
+  const { classes } = props;
+
+  const daysOfWeek = [
+    'segunda',
+    'terça',
+    'quarta',
+    'quinta',
+    'sexta',
+    'sábado',
+  ];
+
   return (
     <Container>
       <table className="schedule">
@@ -17,159 +33,41 @@ const DesktopSchedule: React.FC = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td></td>
-            <td>
-              <Card
-                time={'6:00'}
-                modality="jiu jitsu"
-                category="adulto"
-                color="blue"
-              />
-            </td>
-            <td>
-              <Card
-                time={'6:00'}
-                modality="jiu jitsu"
-                category="adulto"
-                color="blue"
-              />
-            </td>
-            <td>
-              <Card
-                time={'6:00'}
-                modality="jiu jitsu"
-                category="adulto"
-                color="blue"
-              />
-            </td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-              <Card
-                time={'9:00'}
-                modality="jiu jitsu"
-                category="treino feminino"
-                color="pink"
-              />
-            </td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-              <Card
-                time={'10:00'}
-                modality="jiu jitsu"
-                category="treino livre"
-                color="black"
-              />
-            </td>
-          </tr>
-          <tr>
-            <td></td>
-            <td>
-              <Card
-                time={'10:30'}
-                modality="jiu jitsu"
-                category="adulto"
-                color="blue"
-              />
-            </td>
-            <td></td>
-            <td>
-              <Card
-                time={'10:30'}
-                modality="jiu jitsu"
-                category="adulto"
-                color="blue"
-              />
-            </td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>
-              <Card
-                time={'19:00'}
-                modality="jiu jitsu"
-                category="infantil"
-                color="yellow"
-              />
-            </td>
-            <td></td>
-            <td>
-              <Card
-                time={'19:00'}
-                modality="jiu jitsu"
-                category="infantil"
-                color="yellow"
-              />
-            </td>
-            <td></td>
-            <td>
-              <Card
-                time={'19:00'}
-                modality="jiu jitsu"
-                category="infantil"
-                color="yellow"
-              />
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>
-              <Card
-                time={'20:30'}
-                modality="jiu jitsu"
-                category="adulto"
-                color="blue"
-              />
-            </td>
-            <td>
-              <Card
-                time={'20:30'}
-                modality="NO GI"
-                category="adulto"
-                color="gray"
-              />
-            </td>
-            <td>
-              <Card
-                time={'20:30'}
-                modality="jiu jitsu"
-                category="adulto"
-                color="blue"
-              />
-            </td>
-            <td>
-              <Card
-                time={'20:30'}
-                modality="NO GI"
-                category="adulto"
-                color="gray"
-              />
-            </td>
-            <td>
-              <Card
-                time={'20:30'}
-                modality="jiu jitsu"
-                category="adulto"
-                color="blue"
-              />
-            </td>
-            <td></td>
-          </tr>
+          {Object.entries(classes)
+            .sort((a, b) => (a[0] < b[0] ? -1 : 1))
+            .map(([key, value]) => {
+              const line = Array(6).fill(null);
+
+              value.forEach((elem) => {
+                const dayIndex = daysOfWeek.indexOf(elem.day);
+                line[dayIndex] = elem;
+              });
+
+              return (
+                <tr key={`class-table-line=${key}`}>
+                  {line.map((item, index) => {
+                    if (item !== null) {
+                      return (
+                        <td
+                          key={`item-${key}-${String(item.modality)}-${String(
+                            item.category,
+                          )}`}
+                        >
+                          <Card
+                            time={key}
+                            modality={item.modality}
+                            category={item.category}
+                            color={item.color}
+                          />
+                        </td>
+                      );
+                    } else {
+                      return <td key={`item-empty-${index}`}></td>;
+                    }
+                  })}
+                </tr>
+              );
+            })}
         </tbody>
       </table>
     </Container>
