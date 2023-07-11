@@ -87,6 +87,7 @@ export const Container = styled.section`
       font-size: 1rem;
       align-self: end;
       overflow: hidden;
+      text-decoration: none;
 
       & > span {
         color: white;

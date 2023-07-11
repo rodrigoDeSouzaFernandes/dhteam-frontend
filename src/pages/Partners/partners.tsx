@@ -9,6 +9,7 @@ import {
   MessageCircle,
   Phone,
 } from 'ts-react-feather-icons';
+import getWhatsappLink from 'helpers/functions/getWhatsappLink';
 
 const Partners: React.FC = () => {
   const { partners } = usePartners();
@@ -42,19 +43,49 @@ const Partners: React.FC = () => {
                 <h1>{partner.attributes.name}</h1>
                 <p className="description">{partner.attributes.description}</p>
                 <div className="social">
-                  <a href="#">
-                    <Instagram />
-                  </a>
-                  <a href="#">
-                    <Facebook />
-                  </a>
-                  <a href="#" className="whatsapp">
-                    <MessageCircle />
-                    <Phone />
-                  </a>
-                  <a href="#">
-                    <MapPin />
-                  </a>
+                  {partner.attributes.instagram !== null && (
+                    <a
+                      target="_blank"
+                      href={partner.attributes.instagram}
+                      className="instagram"
+                      rel="noreferrer"
+                    >
+                      <Instagram />
+                    </a>
+                  )}
+                  {partner.attributes.facebook !== null && (
+                    <a
+                      target="_blank"
+                      href={partner.attributes.facebook}
+                      className="facebook"
+                      rel="noreferrer"
+                    >
+                      <Facebook />
+                    </a>
+                  )}
+                  {partner.attributes.whatsapp !== null && (
+                    <a
+                      target="_blank"
+                      href={getWhatsappLink(
+                        String(partner.attributes.whatsapp),
+                      )}
+                      className="whatsapp"
+                      rel="noreferrer"
+                    >
+                      <MessageCircle />
+                      <Phone />
+                    </a>
+                  )}
+                  {partner.attributes.googleMaps !== null && (
+                    <a
+                      target="_blank"
+                      href={partner.attributes.googleMaps}
+                      className="mappin"
+                      rel="noreferrer"
+                    >
+                      <MapPin />
+                    </a>
+                  )}
                 </div>
               </div>
             );

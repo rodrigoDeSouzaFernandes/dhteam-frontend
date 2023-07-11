@@ -131,7 +131,7 @@ export const Container = styled.div<ContainerProps>`
 
   .back {
     position: fixed !important;
-    z-index: 1;
+    z-index: 9;
     top: 0;
     left: 0;
 

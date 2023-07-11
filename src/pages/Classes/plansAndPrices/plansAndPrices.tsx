@@ -5,54 +5,13 @@ import Switch from 'components/switch';
 import Select from 'components/select/select';
 import { type Option } from 'types/select.types';
 import CustomPlan from './CustomPlan/customPlan';
-
-const mockModalities = [
-  {
-    id: 1,
-    name: 'Jiu jitsu',
-    category: 'Adulto',
-    daysPerWeek: 3,
-    price: 100,
-  },
-  {
-    id: 1,
-    name: 'Jiu jitsu',
-    category: 'Adulto',
-    daysPerWeek: 5,
-    price: 120,
-  },
-  {
-    id: 1,
-    name: 'Jiu jitsu',
-    category: 'Infantil',
-    daysPerWeek: 3,
-    price: 80,
-  },
-  {
-    id: 2,
-    name: 'No GI',
-    category: 'Adulto',
-    daysPerWeek: 2,
-    price: 80,
-  },
-  {
-    id: 3,
-    name: 'Musculação',
-    category: 'Adulto',
-    daysPerWeek: 3,
-    price: 50,
-  },
-  {
-    id: 3,
-    name: 'Musculação',
-    category: 'Adulto',
-    daysPerWeek: 5,
-    price: 70,
-  },
-];
+import usePlansAndPrices from './usePlansAnsPrices';
 
 const PlansAndPrices: React.FC = () => {
   const [optionSelected, setOptionSelected] = useState<Option | null>(null);
+
+  const { plans } = usePlansAndPrices();
+  console.log(plans);
 
   return (
     <Container>
@@ -85,7 +44,7 @@ const PlansAndPrices: React.FC = () => {
             <tbody>
               <tr>
                 <td>
-                  <Checkbox checked={true} />
+                  <Checkbox checked={true} readOnly />
                 </td>
                 <td>
                   <p>Jiu jitsu</p>

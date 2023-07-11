@@ -51,7 +51,7 @@ const DesktopSchedule: React.FC<IProps> = (props) => {
                         <td
                           key={`item-${key}-${String(item.modality)}-${String(
                             item.category,
-                          )}`}
+                          )}-${index}`}
                         >
                           <Card
                             time={key}

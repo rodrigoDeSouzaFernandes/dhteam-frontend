@@ -1,11 +1,12 @@
 import React from 'react';
 import { Container } from './styles';
-// import { TeamMemberCard } from 'components';
-// import GlobalContext from 'context/globalContext/globalContext';
+import useTeachers from './useTeachers';
+import { backendUrl } from 'services/api';
+import { Facebook, Instagram, Phone } from 'ts-react-feather-icons';
+import getWhatsappLink from 'helpers/functions/getWhatsappLink';
 
 const Teachers: React.FC = () => {
-  // const { windowSize } = useContext(GlobalContext);
-  // const cardSize = windowSize.width > 1020 ? 'large' : 'small';
+  const { teamMembers } = useTeachers();
 
   return (
     <Container>
@@ -18,9 +19,57 @@ const Teachers: React.FC = () => {
           agora mesmo!
         </p>
         <div className="cards-container">
-          {/* <TeamMemberCard name="Douglas" beltColor="black" size={cardSize} />
-          <TeamMemberCard name="Aline" beltColor="black" size={cardSize} />
-          <TeamMemberCard name="Rodrigão" beltColor="brown" size={cardSize} /> */}
+          {teamMembers.map((teacher) => {
+            const profilePhoto = `${backendUrl}${teacher.attributes.profile.data.attributes.url}`;
+
+            const name =
+              teacher.attributes.nickname ??
+              `${teacher.attributes.firstName} ${teacher.attributes.lastName}`;
+
+            return (
+              <div key={`teacher-${teacher.id}`} className="card">
+                <img
+                  alt={`foto de perfil professor ${teacher.attributes.firstName}`}
+                  src={profilePhoto}
+                />
+                <p className="name">{name}</p>
+                <nav className="social-media">
+                  {teacher.attributes.instagram !== null && (
+                    <a
+                      className="social-item"
+                      href={teacher.attributes.instagram}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Instagram size={20} />
+                    </a>
+                  )}
+                  {teacher.attributes.facebook !== null && (
+                    <a
+                      className="social-item"
+                      href={teacher.attributes.facebook}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Facebook size={20} />
+                    </a>
+                  )}
+                  {teacher.attributes.whatsapp !== null && (
+                    <a
+                      className="social-item"
+                      href={getWhatsappLink(
+                        String(teacher.attributes.whatsapp),
+                      )}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Phone size={20} />
+                    </a>
+                  )}
+                </nav>
+              </div>
+            );
+          })}
         </div>
       </div>
     </Container>

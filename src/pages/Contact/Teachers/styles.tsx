@@ -23,26 +23,49 @@ export const Container = styled.section`
 
   .cards-container {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     align-items: center;
-    justify-content: flex-start;
-    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+    justify-content: center;
+    gap: 40px;
     flex-wrap: wrap;
-    width: fit-content;
     margin: auto;
-  }
 
-  @media screen and (min-width: 500px) {
-    .cards-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-  }
+    .card {
+      width: 150px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: auto;
 
-  @media screen and (min-width: 720px) {
-    .cards-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      img {
+        width: 100%;
+        border-radius: 100%;
+      }
+
+      p {
+        text-align: center;
+        font-family: ${(props) => props.theme.fonts.title};
+        font-size: 1.125rem;
+        letter-spacing: 1px;
+      }
+
+      .social-media {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+
+        a {
+          text-decoration: none;
+          color: black;
+
+          &:hover {
+            color: red;
+          }
+        }
+      }
     }
   }
 
