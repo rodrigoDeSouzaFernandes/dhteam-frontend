@@ -42,6 +42,10 @@ export const Container = styled.footer`
       color: ${(props) => props.theme.colors.white.t1};
       font-family: ${(props) => props.theme.fonts.text};
       font-size: 0.75rem;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
@@ -169,6 +173,10 @@ export const MobileFooterContainer = styled.footer`
       color: ${(props) => props.theme.colors.secondary};
       font-family: ${(props) => props.theme.fonts.text};
       font-size: 0.8rem;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
@@ -184,6 +192,8 @@ export const MobileFooterContainer = styled.footer`
     font-size: 0.8rem;
     transition: 0.25s;
 
+    text-decoration: none;
+
     img {
       width: 12px;
       height: 12px;
@@ -196,7 +206,7 @@ export const MobileFooterContainer = styled.footer`
   }
 
   .copyright {
-    padding: 40px;
+    padding: 20px;
     color: ${(props) => props.theme.colors.secondary};
     font-family: ${(props) => props.theme.fonts.text};
     font-size: 0.6rem;
@@ -210,6 +220,10 @@ export const MobileFooterContainer = styled.footer`
   @media screen and (min-width: 400px) {
     .shortcuts-container {
       grid-template-columns: auto auto auto;
+    }
+
+    .copyright {
+      padding: 40px;
     }
   }
 `;

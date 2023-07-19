@@ -8,7 +8,7 @@ const Facilities: React.FC = () => {
   const { photoGallery } = useFacilities();
 
   return (
-    <Container>
+    <Container id="galeria">
       <div className="title">
         <h1>Nossas instalações</h1>
         <p className="subtitle">O local perfeito para sua jornada no esporte</p>

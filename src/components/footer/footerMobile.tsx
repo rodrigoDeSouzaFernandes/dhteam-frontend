@@ -37,20 +37,22 @@ const MobileFooter: React.FC = () => {
         </a>
       </div>
       <div className="shortcuts-container">
-        <a>Sobre nós </a>
-        <a>Nossas instalações</a>
-        <a>Blog</a>
-        <a>Nossa missão</a>
-        <a>Depoimentos</a>
-        <a>FAQ</a>
-        <a>Nossos parceiros</a>
-        <a>Modalidades e horários</a>
-        <a>Contato</a>
-        <a>Equipe</a>
-        <a>O Jiu Jitsu</a>
-        <a>Planos</a>
+        <a href="/#sobre-nos">Sobre nós </a>
+        <a href="/depoimentos">Depoimentos</a>
+        <a href="/#equipe">Equipe</a>
+        <a href="/#galeria">Nossas instalações</a>
+        <a href="/parceiros-e-apoiadores">Nossos parceiros</a>
+        <a href="/contato">Contato</a>
+        <a href="/aulas">Modalidades e horários</a>
+        <a href="/o-jiu-jitsu">O Jiu Jitsu</a>
+        <a href="/faq">FAQ</a>
       </div>
-      <a className="address">
+      <a
+        className="address"
+        target="_blank"
+        href="https://www.google.com/maps/dir//Av.+Nova+York,+1670+-+2%C2%BA+Andar+-+Capelinha,+Betim+-+MG,+32678-620/@-19.9314647,-44.1683182,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0xa6eb1eed11eca9:0xc4a6be72ee33344f!2m2!1d-44.0982778!2d-19.9314784"
+        rel="noreferrer"
+      >
         <img src={localIcon} alt="icone de localização" />
         Av. Nova York, 1670 - 2º Andar Capelinha, Betim - MG
       </a>

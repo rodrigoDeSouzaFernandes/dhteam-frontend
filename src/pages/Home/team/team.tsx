@@ -29,7 +29,7 @@ const Team: React.FC = () => {
   const { teamMembers } = useTeam();
 
   return (
-    <Container backgroundImage={logo}>
+    <Container backgroundImage={logo} id="equipe">
       <div>
         <h1 className="title">NOSSA EQUIPE</h1>
         <p className="subtitle">

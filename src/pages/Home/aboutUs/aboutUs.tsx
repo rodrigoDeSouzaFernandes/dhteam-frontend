@@ -5,7 +5,7 @@ import logo from 'assets/logo/logo.svg';
 const AboutUs: React.FC = () => {
   return (
     <Container backgroundImage={logo}>
-      <div className="apply-max-width">
+      <div className="apply-max-width" id="sobre-nos">
         <aside className="about-us">
           <h1>Sobre nós</h1>
           <p>

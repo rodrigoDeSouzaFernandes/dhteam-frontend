@@ -4,7 +4,6 @@ import { Container } from './styles';
 import rhinoImage from 'assets/logo/rhino.svg';
 
 import {
-  facebookIcon,
   instagramIcon,
   whatsappIcon,
   localIcon,
@@ -21,18 +20,15 @@ const Footer: React.FC = () => {
         alt="Rinoceronte - logo dh team"
       />
       <div className="shortcuts-container">
-        <a>Sobre nós </a>
-        <a>Nossas instalações</a>
-        <a>Blog</a>
-        <a>Nossa missão</a>
-        <a>Depoimentos</a>
-        <a>FAQ</a>
-        <a>Nossos parceiros</a>
-        <a>Modalidades e horários</a>
-        <a>Contato</a>
-        <a>Equipe</a>
-        <a>O Jiu Jitsu</a>
-        <a>Planos</a>
+        <a href="/#sobre-nos">Sobre nós </a>
+        <a href="/depoimentos">Depoimentos</a>
+        <a href="/#equipe">Equipe</a>
+        <a href="/#galeria">Nossas instalações</a>
+        <a href="/parceiros-e-apoiadores">Nossos parceiros</a>
+        <a href="/contato">Contato</a>
+        <a href="/aulas">Modalidades e horários</a>
+        <a href="/o-jiu-jitsu">O Jiu Jitsu</a>
+        <a href="/faq">FAQ</a>
       </div>
 
       <div className="social-container">
