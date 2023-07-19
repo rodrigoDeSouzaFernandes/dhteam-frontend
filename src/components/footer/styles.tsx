@@ -86,7 +86,7 @@ export const Container = styled.footer`
       }
 
       .logo {
-        width: 16px;
+        width: 18px;
       }
       .text {
         z-index: -1;
@@ -152,8 +152,8 @@ export const MobileFooterContainer = styled.footer`
     }
 
     img {
-      width: 25px;
-      height: 25px;
+      width: 28px;
+      height: 28px;
     }
   }
 

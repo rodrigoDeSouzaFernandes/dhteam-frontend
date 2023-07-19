@@ -73,7 +73,7 @@ const TeamMemberCard: React.FC<Props> = ({
     whatsapp !== null ? (
       <a
         className="social-item"
-        href={getWhatsappLink(String(whatsapp))}
+        href={getWhatsappLink(String(whatsapp), false)}
         target="_blank"
         rel="noreferrer"
       >

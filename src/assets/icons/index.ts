@@ -5,6 +5,7 @@ import xIcon from './x.svg';
 import checkedIcon from './green-circle-checked.svg';
 import facebookIcon from './facebook.svg';
 import whatsappIcon from './whatsapp.svg';
+import youtubeIcon from './youtube.svg';
 
 export {
   localIcon,
@@ -14,4 +15,5 @@ export {
   checkedIcon,
   facebookIcon,
   whatsappIcon,
+  youtubeIcon,
 };

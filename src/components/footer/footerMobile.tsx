@@ -5,21 +5,35 @@ import {
   instagramIcon,
   whatsappIcon,
   localIcon,
+  youtubeIcon,
 } from 'assets/icons';
+import getWhatsappLink from 'helpers/functions/getWhatsappLink';
 
 const MobileFooter: React.FC = () => {
   return (
     <MobileFooterContainer>
       <div className="social">
         <p>Visite nossas redes sociais:</p>
-        <a>
-          <img className="facebook" alt="facebook icon" src={facebookIcon} />
+        <a
+          target="_blank"
+          href={getWhatsappLink('5531994655236', true)}
+          rel="noreferrer"
+        >
+          <img alt="facebook icon" src={whatsappIcon} />
         </a>
-        <a>
-          <img className="facebook" alt="facebook icon" src={instagramIcon} />
+        <a
+          target="_blank"
+          href="https://www.instagram.com/dh_team_brazilian_jiujitsu/"
+          rel="noreferrer"
+        >
+          <img alt="facebook icon" src={instagramIcon} />
         </a>
-        <a>
-          <img className="facebook" alt="facebook icon" src={whatsappIcon} />
+        <a
+          target="_blank"
+          href="https://www.youtube.com/@DHTEAMBJJ"
+          rel="noreferrer"
+        >
+          <img alt="facebook icon" src={youtubeIcon} />
         </a>
       </div>
       <div className="shortcuts-container">

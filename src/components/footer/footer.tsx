@@ -8,7 +8,9 @@ import {
   instagramIcon,
   whatsappIcon,
   localIcon,
+  youtubeIcon,
 } from 'assets/icons';
+import getWhatsappLink from 'helpers/functions/getWhatsappLink';
 
 const Footer: React.FC = () => {
   return (
@@ -34,17 +36,36 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="social-container">
-        <a className="social">
-          <img className="logo" src={facebookIcon} alt="fabebook logo" />
+        {/* <a className="social">
+          <img className="logo" src={facebookIcon} alt="facebook logo" />
           <p className="text">DH TEAM</p>
+        </a> */}
+        <a
+          className="social"
+          target="_blank"
+          href={getWhatsappLink('5531994655236', false)}
+          rel="noreferrer"
+        >
+          <img className="logo" src={whatsappIcon} alt="whatsapp logo" />
+          <p className="text">(31) 99465-5236</p>
         </a>
-        <a className="social">
-          <img className="logo" src={instagramIcon} alt="fabebook logo" />
+        <a
+          className="social"
+          target="_blank"
+          href="https://www.instagram.com/dh_team_brazilian_jiujitsu/"
+          rel="noreferrer"
+        >
+          <img className="logo" src={instagramIcon} alt="instagram logo" />
           <p className="text">@dh_team_brazillian_jiujitsu</p>
         </a>
-        <a className="social">
-          <img className="logo" src={whatsappIcon} alt="fabebook logo" />
-          <p className="text">(31) 91234-5678</p>
+        <a
+          className="social"
+          target="_blank"
+          href="https://www.youtube.com/@DHTEAMBJJ"
+          rel="noreferrer"
+        >
+          <img className="logo" src={youtubeIcon} alt="youtube logo" />
+          <p className="text">DH TEAM</p>
         </a>
         <a
           className="social"

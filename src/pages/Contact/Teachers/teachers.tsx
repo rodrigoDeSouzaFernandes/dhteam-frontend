@@ -59,6 +59,7 @@ const Teachers: React.FC = () => {
                       className="social-item"
                       href={getWhatsappLink(
                         String(teacher.attributes.whatsapp),
+                        false,
                       )}
                       target="_blank"
                       rel="noreferrer"
