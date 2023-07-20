@@ -28,8 +28,6 @@ const SendMessage: React.FC = () => {
       : `https://web.whatsapp.com/send?phone=553194655236&text=${text}`;
   }, [isMobile, message, name]);
 
-  console.log(name, message);
-
   return (
     <Container>
       <div className="apply-max-width">

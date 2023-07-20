@@ -28,7 +28,6 @@ export const Container = styled.footer`
   .rhino-image {
     width: 100%;
     max-width: 150px;
-    opacity: 0.8;
   }
 
   .shortcuts-container {

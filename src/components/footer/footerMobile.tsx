@@ -1,7 +1,6 @@
 import React from 'react';
 import { MobileFooterContainer } from './styles';
 import {
-  facebookIcon,
   instagramIcon,
   whatsappIcon,
   localIcon,

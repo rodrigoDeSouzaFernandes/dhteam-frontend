@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Container } from './styles';
 
 import hero from 'assets/images/hero.svg';
 import Button from 'components/button';
 import logo from 'assets/logo/logo.svg';
+import useWindowSize from 'helpers/customHooks/useWindowSize';
 
 const Home: React.FC = () => {
+  const windowSize = useWindowSize();
+
+  const isMobile = windowSize.width < 1000;
+
+  const messageLink = useMemo(() => {
+    const text =
+      'Olá! Ao navegar pelo seu site, fiquei interessado em agendar uma aula experimental. Poderia me fornecer mais informações sobre como proceder?';
+
+    return isMobile
+      ? `https://api.whatsapp.com/send?phone=553194655236&text=${text}`
+      : `https://web.whatsapp.com/send?phone=553194655236&text=${text}`;
+  }, [isMobile]);
+
   return (
     <Container backgroundImage={hero}>
       <div className="apply-max-width">
@@ -26,6 +40,9 @@ const Home: React.FC = () => {
           <Button
             text={'Venha fazer uma aula grátis!'}
             className="button-free-trial"
+            onClick={() => {
+              window.open(messageLink, '_blank');
+            }}
           />
         </div>
       </div>

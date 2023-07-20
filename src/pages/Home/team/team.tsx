@@ -11,18 +11,13 @@ const Team: React.FC = () => {
 
   const showCarousel = useMemo(() => windowSize.width < 800, [windowSize]);
 
-  const cardsToShow = useMemo(
-    () => (windowSize.width < 1100 ? 3 : windowSize.width < 1450 ? 3 : 4),
-    [windowSize],
-  );
-
   const cardSize = useMemo(
     () => (windowSize.width < 400 ? 'small' : 'large'),
     [windowSize],
   );
 
   const cardSizeOutCarousel = useMemo(
-    () => (windowSize.width < 1100 ? 'small' : 'large'),
+    () => (windowSize.width < 1450 ? 'small' : 'large'),
     [windowSize],
   );
 
@@ -82,28 +77,26 @@ const Team: React.FC = () => {
           </Carousel>
         ) : (
           <>
-            {teamMembers
-              .filter((_member, index) => index < cardsToShow)
-              .map((member, index) => (
-                <TeamMemberCard
-                  key={`team-member-${index}`}
-                  className="team-member-card"
-                  beltColor={member.attributes.belt.data.attributes.color}
-                  name={member.attributes.firstName}
-                  lastName={member.attributes.lastName}
-                  size={cardSizeOutCarousel}
-                  photo={member.attributes.profile.data.attributes.url}
-                  birthDate={member.attributes.birthDate}
-                  beltRank={member.attributes.beltRank}
-                  achievements={member.attributes.achievements}
-                  phone={member.attributes.phone}
-                  instagram={member.attributes.instagram}
-                  facebook={member.attributes.facebook}
-                  whatsapp={member.attributes.whatsapp}
-                  youtube={member.attributes.youtube}
-                  nickname={member.attributes.nickname}
-                />
-              ))}
+            {teamMembers.map((member, index) => (
+              <TeamMemberCard
+                key={`team-member-${index}`}
+                className="team-member-card"
+                beltColor={member.attributes.belt.data.attributes.color}
+                name={member.attributes.firstName}
+                lastName={member.attributes.lastName}
+                size={cardSizeOutCarousel}
+                photo={member.attributes.profile.data.attributes.url}
+                birthDate={member.attributes.birthDate}
+                beltRank={member.attributes.beltRank}
+                achievements={member.attributes.achievements}
+                phone={member.attributes.phone}
+                instagram={member.attributes.instagram}
+                facebook={member.attributes.facebook}
+                whatsapp={member.attributes.whatsapp}
+                youtube={member.attributes.youtube}
+                nickname={member.attributes.nickname}
+              />
+            ))}
           </>
         )}
       </div>

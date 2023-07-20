@@ -104,14 +104,9 @@ export const Container = styled.section<ContainerProps>`
   @media screen and (min-width: 800px) {
     padding: 80px 40px;
 
-    .subtitle {
-      /* max-width: 600px; */
-    }
-
     & > .members {
       display: grid;
-      grid-template-columns: repeat(3, auto);
-      min-height: 300px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
 
       .team-member-card {
         margin-bottom: 0px;

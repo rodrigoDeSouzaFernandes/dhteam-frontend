@@ -6,7 +6,7 @@ const usePartnersAndSupporters = (): IUsePartnersAndSupporters => {
   const [partners, setPartners] = useState<Partner[]>([]);
 
   const getPartners = (): void => {
-    Api.get('/partners?populate=*')
+    Api.get('/partners?populate=*&filters[active][$eq]=true')
       .then((response) => {
         setPartners(response.data.data);
       })
