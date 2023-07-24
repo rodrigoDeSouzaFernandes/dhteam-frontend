@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
         <a
           className="social"
           target="_blank"
-          href={getWhatsappLink('5531994655236', false)}
+          href={getWhatsappLink('5531994655236')}
           rel="noreferrer"
         >
           <img className="logo" src={whatsappIcon} alt="whatsapp logo" />

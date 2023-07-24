@@ -42,22 +42,40 @@ const HeaderMobile: React.FC = () => {
             onClick={toogleMobileMenu}
           />
 
-          <NavItem disabled={pathname === '/'} to="/">
+          <NavItem
+            disabled={pathname === '/'}
+            to="/"
+            onClick={toogleMobileMenu}
+          >
             DH TEAM
           </NavItem>
-          <NavItem disabled={pathname === '/aulas'} to="/aulas">
+          <NavItem
+            onClick={toogleMobileMenu}
+            disabled={pathname === '/aulas'}
+            to="/aulas"
+          >
             AULAS
           </NavItem>
-          <NavItem disabled={pathname === '/o-jiu-jitsu'} to="/o-jiu-jitsu">
+          <NavItem
+            onClick={toogleMobileMenu}
+            disabled={pathname === '/o-jiu-jitsu'}
+            to="/o-jiu-jitsu"
+          >
             O JIU-JITSU
           </NavItem>
-          {/* <NavItem disabled={false} to="#">
-              Blog
-            </NavItem> */}
-          <NavItem disabled={pathname === '/contato'} to="/contato">
+
+          <NavItem
+            onClick={toogleMobileMenu}
+            disabled={pathname === '/contato'}
+            to="/contato"
+          >
             CONTATO
           </NavItem>
-          <NavItem disabled={pathname === '/faq'} to="/faq">
+          <NavItem
+            onClick={toogleMobileMenu}
+            disabled={pathname === '/faq'}
+            to="/faq"
+          >
             FAQ
           </NavItem>
         </MobileMenu>

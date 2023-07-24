@@ -15,7 +15,7 @@ const MobileFooter: React.FC = () => {
         <p>Visite nossas redes sociais:</p>
         <a
           target="_blank"
-          href={getWhatsappLink('5531994655236', true)}
+          href={getWhatsappLink('5531994655236')}
           rel="noreferrer"
         >
           <img alt="facebook icon" src={whatsappIcon} />

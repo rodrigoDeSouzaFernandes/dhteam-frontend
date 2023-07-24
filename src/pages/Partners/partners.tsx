@@ -68,7 +68,6 @@ const Partners: React.FC = () => {
                       target="_blank"
                       href={getWhatsappLink(
                         String(partner.attributes.whatsapp),
-                        false,
                       )}
                       className="whatsapp"
                       rel="noreferrer"

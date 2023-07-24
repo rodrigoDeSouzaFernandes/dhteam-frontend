@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, NavItem } from './styles';
 import { localIcon } from 'assets/icons';
 import logo from 'assets/logo/logo.svg';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const { pathname } = useLocation();
@@ -28,11 +28,13 @@ const Header: React.FC = () => {
       </div>
       <div className="bottom-line">
         <div>
-          <img
-            src={logo}
-            alt="Logo DH TEAM BRASILIAN JIU JITSU"
-            className="logo"
-          />
+          <Link className="logo" to="/">
+            <img
+              src={logo}
+              alt="Logo DH TEAM BRASILIAN JIU JITSU"
+              // className="logo"
+            />
+          </Link>
           <nav className="navbar">
             <NavItem disabled={pathname === '/'} to="/">
               DH TEAM
@@ -43,9 +45,6 @@ const Header: React.FC = () => {
             <NavItem disabled={pathname === '/o-jiu-jitsu'} to="/o-jiu-jitsu">
               O JIU-JITSU
             </NavItem>
-            {/* <NavItem disabled={false} to="#">
-              Blog
-            </NavItem> */}
             <NavItem disabled={pathname === '/contato'} to="/contato">
               CONTATO
             </NavItem>

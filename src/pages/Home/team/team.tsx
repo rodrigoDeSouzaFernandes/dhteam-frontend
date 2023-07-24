@@ -45,15 +45,14 @@ const Team: React.FC = () => {
         {showCarousel ? (
           <Carousel
             emulateTouch={false}
-            infiniteLoop={true}
+            infiniteLoop={false}
             autoPlay={false}
             interval={5000}
             showThumbs={false}
             showIndicators={true}
             centerSlidePercentage={100}
             centerMode={true}
-            swipeScrollTolerance={50}
-            showArrows={false}
+            showArrows={true}
           >
             {teamMembers.map((member, index) => (
               <TeamMemberCard

@@ -54,6 +54,7 @@ const SendMessage: React.FC = () => {
             Nome:
             <input
               type="text"
+              placeholder="Digite seu nome aqui."
               value={name}
               onChange={({ target }) => {
                 setName(target.value);
@@ -63,6 +64,7 @@ const SendMessage: React.FC = () => {
           <label>
             Mensagem:
             <textarea
+              placeholder="Digite sua mensagem aqui."
               value={message}
               onChange={({ target }) => {
                 setMessage(target.value);

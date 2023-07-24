@@ -32,14 +32,13 @@ const PartnersAndSupporters: React.FC = () => {
       <div className="apply-max-width carousel-container">
         <Carousel
           emulateTouch={false}
-          infiniteLoop={true}
-          autoPlay={true}
+          infiniteLoop={false}
+          autoPlay={false}
           interval={5000}
           showThumbs={false}
           showIndicators={true}
           centerSlidePercentage={centerSlidePercentage}
           centerMode={true}
-          swipeScrollTolerance={50}
         >
           {partners.map((partner): React.ReactChild => {
             const {

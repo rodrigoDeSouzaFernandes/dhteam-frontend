@@ -53,10 +53,13 @@ export const Container = styled.header`
       padding-left: 200px;
 
       .logo {
-        width: 150px;
         position: absolute;
         left: 0;
         z-index: 1;
+
+        img {
+          width: 150px;
+        }
       }
 
       .navbar {
